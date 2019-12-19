@@ -1,0 +1,132 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "api-v1",
+        "title": "Stoplight",
+        "description": "",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.stoplight.io\/v1"
+    ],
+    "paths": {
+        "\/versions\/publish\/anon": {
+            "post": {
+                "summary": "Publish Anonymous",
+                "description": "Anonymously publish to API Docs.\n\nThis endpoint will take a JSON spec or a URL to a swagger or raml spec.\n\n```\n{\n  \"specData\": {...}\n}\n```\n\nor\n\n```\n{\n  \"url\": \"http:\/\/petstore.swagger.io\/v2\/swagger.json\"\n}\n```\n\nThe spec will be published to api-docs.io anonymously, which means you will not be able to update or remove this documentation.\n\nThe response will contain a url to the published documentation.\n\n```\n{\n  \"url\": \"https:\/\/swagger-petstore.api-docs.io\/v1.0.0\"\n}\n```\n\n\nThe limitations of anonymo",
+                "operationId": "POSTVersionsPublishAnon",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "\/versions\/{versionId}\/export\/{format}": {
+            "get": {
+                "summary": "Export",
+                "description": "Export a version to your choice of API specification.\n\n### Allowed Formats:\n\n- oas.json\n- oas.yaml\n- raml08.yaml\n- raml10.yaml\n- stoplight.json\n- stoplight.yaml\n\nThe stoplight format actually returns OAS (Swagger 2) with x-stoplight annotations. If you are exporting with the intent on importing back into Stoplight, this export format preserves the most information.\n\n### Example URL:\n\n`https:\/\/api.stoplight.io\/v1\/versions\/123\/export\/oas.json`",
+                "operationId": "GETVersionsVersionIdExportFormat",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/versions\/{versionId}\/import": {
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Import",
+                "description": "Import the given specification into an existing version. \n\n**Warning, this is a destructive action! Any resources present in both the existing version, and the specification being imported, will be overwritten.**\n\nThis endpoint is particularly useful when you manage a specification file (Swagger or RAML) outside of Stoplight, and want to keep your Stoplight API version up to date as that specification changes.\n\nBy default, a \"merge\" is performed when importing. If a resource exists in the specif",
+                "operationId": "PUTVersionsVersionIdImport",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "\/versions\/{versionId}\/publish": {
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Publish",
+                "description": "Re-publish an API version in Stoplight. This will re-publish the given API version, with whatever publish settings have already been setup in the app.\n\nThis will only work with APIs that have previously been published at least once.\n\nThis works well with the #endpoint:957qEfc97BB5XGAeZ endpoint to augment your continuous integration processes, and automatically re-publish your documentation when certain events happen. Once such scenario is:\n\n1. Swagger is generated from your codebase, and pushed",
+                "operationId": "POSTVersionsVersionIdPublish",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "\/versions\/{versionId}\/unpublish": {
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Unpublish",
+                "description": "Unpublish the documentation associated with the given API version.",
+                "operationId": "PUTVersionsVersionIdUnpublish",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "shared-user": {
+                "type": "object",
+                "properties": {
+                    "_empty_": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "standarderror": {
+                "type": "object"
+            }
+        }
+    }
+}
