@@ -1,0 +1,82 @@
+{
+    "id": "2a95cdc2e145b130421e56a2334d35bf",
+    "name": "To-do Demo",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "8db92dbf68411d3f15d65aa8cd350a5a",
+            "name": "",
+            "url": "http:\/\/todos.stoplight.io\/\/todos\/{todoId}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "parameters",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2a95cdc2e145b130421e56a2334d35bf",
+            "rawModeData": ""
+        },
+        {
+            "id": "2616c445b1ca07681c5371725225690e",
+            "name": "Get Todo",
+            "url": "http:\/\/todos.stoplight.io\/\/todos\/{todoId}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2a95cdc2e145b130421e56a2334d35bf",
+            "rawModeData": ""
+        },
+        {
+            "id": "3b95daaef676447fdfd52c3109c75d3f",
+            "name": "Update Todo",
+            "url": "http:\/\/todos.stoplight.io\/\/todos\/{todoId}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2a95cdc2e145b130421e56a2334d35bf",
+            "rawModeData": ""
+        }
+    ]
+}
