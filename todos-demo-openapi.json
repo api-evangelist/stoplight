@@ -1,0 +1,69 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0",
+        "title": "To-Dos Demo",
+        "description": "This OAS2 (Swagger 2) file represents a real API that lives at http:\/\/todos.stoplight.io.\n\nFor authentication information, click the apikey security scheme in the editor sidebar.",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/todos.stoplight.io\/"
+    ],
+    "paths": {
+        "\/todos\/{todoId}": {
+            "parameters": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get Todo",
+                "description": "",
+                "operationId": "GETTodo",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/todo-full"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update Todo",
+                "description": "",
+                "operationId": "PUTTodos",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "todo-partial": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "completed": {
+                        "description": "",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "todo-full": {
+                "type": "object"
+            }
+        }
+    }
+}
