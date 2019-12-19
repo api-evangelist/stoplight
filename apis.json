@@ -1,0 +1,138 @@
+{
+    "name": "StopLight",
+    "description": "StopLight, providing engineering teams with the best way to document, test, and build web APIs.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2951-stoplight.jpg",
+    "tags": [
+        "api lifeycle",
+        "clients",
+        "design",
+        "have api",
+        "have swagger",
+        "proxy",
+        "studio",
+        "testing"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/stoplight\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "To-do Demo",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2951-stoplight.jpg",
+            "humanURL": "http:\/\/stoplight.io\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/todo-demo.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/todo-demo-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/todo-demo-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "To-Dos Demo",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2951-stoplight.jpg",
+            "humanURL": "http:\/\/stoplight.io\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/todos-demo.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/todos-demo-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/todos-demo-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Stoplight",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2951-stoplight.jpg",
+            "humanURL": "http:\/\/stoplight.io\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/stoplight.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/stoplight-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/stoplight-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.stoplight.io\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/blog.stoplight.io\/rss\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/stoplight"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/stoplightio"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2951-2019-09-03-21-41-06.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2951-2019-09-03-21-41-13.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2951-2019-09-03-21-41-31.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2951-2019-09-03-21-42-49.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2951-2019-09-04-15-00-06.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2951-2019-09-04-09-42-55.json"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/stoplightio"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/stoplight.io\/"
+        }
+    ]
+}
