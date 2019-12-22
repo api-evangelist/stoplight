@@ -1,5 +1,5 @@
 {
-    "id": "2a95cdc2e145b130421e56a2334d35bf",
+    "id": "2fe830709926c6a86b858b108edefde2",
     "name": "To-do Demo",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "8db92dbf68411d3f15d65aa8cd350a5a",
+            "id": "256c2359c64203c3145e0aad3a55c37c",
             "name": "",
             "url": "http:\/\/todos.stoplight.io\/\/todos\/{todoId}",
             "description": "",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2a95cdc2e145b130421e56a2334d35bf",
+            "collectionId": "2fe830709926c6a86b858b108edefde2",
             "rawModeData": ""
         },
         {
-            "id": "2616c445b1ca07681c5371725225690e",
+            "id": "e7450a3f6204175f385078c98c9bf4bc",
             "name": "Get Todo",
             "url": "http:\/\/todos.stoplight.io\/\/todos\/{todoId}",
             "description": "",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2a95cdc2e145b130421e56a2334d35bf",
+            "collectionId": "2fe830709926c6a86b858b108edefde2",
             "rawModeData": ""
         },
         {
-            "id": "3b95daaef676447fdfd52c3109c75d3f",
+            "id": "92824ef79d68e94bf9c67f6aafcad169",
             "name": "Update Todo",
             "url": "http:\/\/todos.stoplight.io\/\/todos\/{todoId}",
             "description": "",
@@ -75,7 +75,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2a95cdc2e145b130421e56a2334d35bf",
+            "collectionId": "2fe830709926c6a86b858b108edefde2",
             "rawModeData": ""
         }
     ]
