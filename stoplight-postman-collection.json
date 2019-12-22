@@ -1,5 +1,5 @@
 {
-    "id": "7ed0ccaaecb979ad75341e9179a5c3ba",
+    "id": "7ffa2a67547946e31ad4826ae9789556",
     "name": "Stoplight",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "ec8a77ca3b93c1dd19aa5f43750606f5",
+            "id": "509633df1d50495407014b0d4897ce17",
             "name": "Publish Anonymous",
             "url": "http:\/\/api.stoplight.io\/v1\/versions\/publish\/anon",
             "description": "Anonymously publish to API Docs.\n\nThis endpoint will take a JSON spec or a URL to a swagger or raml spec.\n\n```\n{\n  \"specData\": {...}\n}\n```\n\nor\n\n```\n{\n  \"url\": \"http:\/\/petstore.swagger.io\/v2\/swagger.json\"\n}\n```\n\nThe spec will be published to api-docs.io anonymously, which means you will not be able to update or remove this documentation.\n\nThe response will contain a url to the published documentation.\n\n```\n{\n  \"url\": \"https:\/\/swagger-petstore.api-docs.io\/v1.0.0\"\n}\n```\n\n\nThe limitations of anonymo",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "7ed0ccaaecb979ad75341e9179a5c3ba",
+            "collectionId": "7ffa2a67547946e31ad4826ae9789556",
             "rawModeData": ""
         },
         {
-            "id": "7c97b3eac9ffd3852567016a77afb4a8",
+            "id": "6c7d463a5bc82c1a634d57a37cb321c1",
             "name": "Export",
             "url": "http:\/\/api.stoplight.io\/v1\/versions\/{versionId}\/export\/{format}",
             "description": "Export a version to your choice of API specification.\n\n### Allowed Formats:\n\n- oas.json\n- oas.yaml\n- raml08.yaml\n- raml10.yaml\n- stoplight.json\n- stoplight.yaml\n\nThe stoplight format actually returns OAS (Swagger 2) with x-stoplight annotations. If you are exporting with the intent on importing back into Stoplight, this export format preserves the most information.\n\n### Example URL:\n\n`https:\/\/api.stoplight.io\/v1\/versions\/123\/export\/oas.json`",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "7ed0ccaaecb979ad75341e9179a5c3ba",
+            "collectionId": "7ffa2a67547946e31ad4826ae9789556",
             "rawModeData": ""
         },
         {
-            "id": "5b73738b4b68ce76d22f63481d684374",
+            "id": "e72c051dcf484b6a8c12816eedb3ddb8",
             "name": "",
             "url": "http:\/\/api.stoplight.io\/v1\/versions\/{versionId}\/export\/{format}",
             "description": "",
@@ -75,11 +75,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "7ed0ccaaecb979ad75341e9179a5c3ba",
+            "collectionId": "7ffa2a67547946e31ad4826ae9789556",
             "rawModeData": ""
         },
         {
-            "id": "e3a93ff5a7ea1555527fdab3bd186663",
+            "id": "3b70716e0f3b27ea5d723d901354f1e0",
             "name": "",
             "url": "http:\/\/api.stoplight.io\/v1\/versions\/{versionId}\/import",
             "description": "",
@@ -98,11 +98,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "7ed0ccaaecb979ad75341e9179a5c3ba",
+            "collectionId": "7ffa2a67547946e31ad4826ae9789556",
             "rawModeData": ""
         },
         {
-            "id": "f38aac495904e9a9444144b3c5297e4e",
+            "id": "2a9b4f40522ea72dbc4d65632742fb9f",
             "name": "Import",
             "url": "http:\/\/api.stoplight.io\/v1\/versions\/{versionId}\/import",
             "description": "Import the given specification into an existing version. \n\n**Warning, this is a destructive action! Any resources present in both the existing version, and the specification being imported, will be overwritten.**\n\nThis endpoint is particularly useful when you manage a specification file (Swagger or RAML) outside of Stoplight, and want to keep your Stoplight API version up to date as that specification changes.\n\nBy default, a \"merge\" is performed when importing. If a resource exists in the specif",
@@ -121,11 +121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "7ed0ccaaecb979ad75341e9179a5c3ba",
+            "collectionId": "7ffa2a67547946e31ad4826ae9789556",
             "rawModeData": ""
         },
         {
-            "id": "d425aa55cd031939e368da12882800f9",
+            "id": "dec147f16398866f4c30d20c53eff275",
             "name": "",
             "url": "http:\/\/api.stoplight.io\/v1\/versions\/{versionId}\/publish",
             "description": "",
@@ -144,11 +144,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "7ed0ccaaecb979ad75341e9179a5c3ba",
+            "collectionId": "7ffa2a67547946e31ad4826ae9789556",
             "rawModeData": ""
         },
         {
-            "id": "37da5d826da93395715d0394658781de",
+            "id": "1e8022d23eaa0aa880152a0f03027c40",
             "name": "Publish",
             "url": "http:\/\/api.stoplight.io\/v1\/versions\/{versionId}\/publish",
             "description": "Re-publish an API version in Stoplight. This will re-publish the given API version, with whatever publish settings have already been setup in the app.\n\nThis will only work with APIs that have previously been published at least once.\n\nThis works well with the #endpoint:957qEfc97BB5XGAeZ endpoint to augment your continuous integration processes, and automatically re-publish your documentation when certain events happen. Once such scenario is:\n\n1. Swagger is generated from your codebase, and pushed",
@@ -167,11 +167,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "7ed0ccaaecb979ad75341e9179a5c3ba",
+            "collectionId": "7ffa2a67547946e31ad4826ae9789556",
             "rawModeData": ""
         },
         {
-            "id": "e10d992c5f57f0a3fc3e33fc2279fd09",
+            "id": "94e48f437642023feee3d8a4963d2384",
             "name": "",
             "url": "http:\/\/api.stoplight.io\/v1\/versions\/{versionId}\/unpublish",
             "description": "",
@@ -190,11 +190,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "7ed0ccaaecb979ad75341e9179a5c3ba",
+            "collectionId": "7ffa2a67547946e31ad4826ae9789556",
             "rawModeData": ""
         },
         {
-            "id": "779fb4d86fabba0121f0e7cbe2223f58",
+            "id": "d7b447f9267e776bb51510f9ad1b3c29",
             "name": "Unpublish",
             "url": "http:\/\/api.stoplight.io\/v1\/versions\/{versionId}\/unpublish",
             "description": "Unpublish the documentation associated with the given API version.",
@@ -213,7 +213,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "7ed0ccaaecb979ad75341e9179a5c3ba",
+            "collectionId": "7ffa2a67547946e31ad4826ae9789556",
             "rawModeData": ""
         }
     ]
