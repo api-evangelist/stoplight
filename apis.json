@@ -12,8 +12,8 @@
         "studio",
         "testing"
     ],
-    "created": "2019-12-19",
-    "modified": "2019-12-19",
+    "created": "2019-12-21",
+    "modified": "2019-12-21",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/stoplight\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -31,11 +31,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/todo-demo-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/stoplight\/master\/todo-demo-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/todo-demo-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/stoplight\/master\/todo-demo-postman-collection.json"
                 }
             ]
         },
@@ -53,11 +53,11 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/todos-demo-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/stoplight\/master\/todos-demo-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/todos-demo-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/stoplight\/master\/todos-demo-postman-collection.json"
                 }
             ]
         },
@@ -75,17 +75,21 @@
                 },
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/stoplight-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/stoplight\/master\/stoplight-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/stoplight-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/stoplight\/master\/stoplight-postman-collection.json"
                 }
             ]
         }
     ],
     "include": [],
     "x-common": [
+        {
+            "type": "APIs.json",
+            "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/apis.json"
+        },
         {
             "type": "Blog",
             "url": "http:\/\/blog.stoplight.io\/"
