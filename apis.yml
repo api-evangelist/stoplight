@@ -1,0 +1,30 @@
+aid: stoplight
+name: Stoplight
+segments:
+  - Documentation
+description: >-
+  Stoplight is a design-first API documentation platform with a visual editor for OpenAPI specs, hosted docs, and style guides.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Documentation
+created: '2026-03-03'
+modified: '2026-03-03'
+url: https://raw.githubusercontent.com/api-evangelist/stoplight/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: stoplight:stoplight
+    name: Stoplight
+    description: >-
+      Stoplight is a design-first API documentation platform with a visual editor for OpenAPI specs, hosted docs, and style guides.
+    humanURL: https://example.com
+    tags:
+      - Documentation
+    properties:
+      - type: Documentation
+        url: https://example.com
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
