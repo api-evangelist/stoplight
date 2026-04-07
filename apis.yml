@@ -13,11 +13,11 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Documentation
   - API Design
   - API Governance
-  - Mock Servers
+  - Documentation
   - Linting
+  - Mock Servers
   - OpenAPI
   - Style Guides
 created: '2026-03-03'
@@ -36,12 +36,12 @@ apis:
       no specialized knowledge required.
     humanURL: https://stoplight.io
     tags:
-      - Documentation
       - API Design
       - API Governance
+      - Documentation
       - Mock Servers
-      - Style Guides
       - OpenAPI
+      - Style Guides
     properties:
       - type: Documentation
         url: https://docs.stoplight.io/
@@ -63,10 +63,10 @@ apis:
       servers powered by API descriptions.
     humanURL: https://stoplight.io/open-source/prism
     tags:
-      - Mock Servers
-      - OpenAPI
-      - Open Source
       - API Testing
+      - Mock Servers
+      - Open Source
+      - OpenAPI
       - Proxy
     properties:
       - type: Documentation
@@ -82,12 +82,12 @@ apis:
       enforce consistent API design standards across their organization.
     humanURL: https://stoplight.io/open-source/spectral
     tags:
+      - API Governance
+      - AsyncAPI
       - Linting
+      - Open Source
       - OpenAPI
       - Style Guides
-      - API Governance
-      - Open Source
-      - AsyncAPI
     properties:
       - type: Documentation
         url: https://docs.stoplight.io/docs/spectral
@@ -123,8 +123,8 @@ apis:
     humanURL: https://stoplight.io/api-design
     tags:
       - API Design
-      - OpenAPI
       - Editor
+      - OpenAPI
       - Technical Writing
     properties:
       - type: Documentation
