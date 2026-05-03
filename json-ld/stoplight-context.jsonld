@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "@vocab": "https://stoplight.io/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "doap": "http://usefulinc.com/ns/doap#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "APIDesignTool": {
+      "@id": "https://stoplight.io/schema/APIDesignTool",
+      "@type": "@id"
+    },
+    "Workspace": "https://stoplight.io/schema/Workspace",
+    "Project": "https://stoplight.io/schema/Project",
+    "APISpec": "https://stoplight.io/schema/APISpec",
+    "StyleGuide": "https://stoplight.io/schema/StyleGuide",
+    "MockServer": "https://stoplight.io/schema/MockServer",
+    "SpectralRule": "https://stoplight.io/schema/SpectralRule",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "version": "schema:softwareVersion",
+    "license": {
+      "@id": "doap:license",
+      "@type": "@id"
+    },
+    "repository": {
+      "@id": "doap:repository",
+      "@type": "@id"
+    },
+    "programmingLanguage": "schema:programmingLanguage",
+    "workspace": {
+      "@id": "https://stoplight.io/schema/workspace",
+      "@type": "@id"
+    },
+    "projects": "https://stoplight.io/schema/projects",
+    "openApiVersion": "https://stoplight.io/schema/openApiVersion",
+    "asyncApiVersion": "https://stoplight.io/schema/asyncApiVersion",
+    "rulesets": "https://stoplight.io/schema/rulesets",
+    "severity": "https://stoplight.io/schema/severity",
+    "given": "https://stoplight.io/schema/given",
+    "then": "https://stoplight.io/schema/then",
+    "mockServer": {
+      "@id": "https://stoplight.io/schema/mockServer",
+      "@type": "@id"
+    },
+    "documentation": {
+      "@id": "schema:documentation",
+      "@type": "@id"
+    },
+    "npmPackage": {
+      "@id": "https://stoplight.io/schema/npmPackage",
+      "@type": "@id"
+    }
+  }
+}

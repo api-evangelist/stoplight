@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/stoplight/json-schema/stoplight-spectral-ruleset-schema.json",
+  "title": "Spectral Ruleset",
+  "description": "Schema for a Spectral API governance ruleset file (.spectral.yml or .spectral.json). Defines rules for linting OpenAPI, AsyncAPI, and other API description formats.",
+  "type": "object",
+  "properties": {
+    "extends": {
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "Extend a single ruleset by name or file path (e.g. 'spectral:oas')"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "array", "minItems": 2, "maxItems": 2 }
+            ]
+          },
+          "description": "Extend multiple rulesets"
+        }
+      ]
+    },
+    "rules": {
+      "type": "object",
+      "description": "Custom rules or overrides for extended rules",
+      "additionalProperties": {
+        "$ref": "#/$defs/Rule"
+      }
+    },
+    "formats": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Format hints to restrict which documents this ruleset applies to"
+    },
+    "functionsDir": {
+      "type": "string",
+      "description": "Path to directory containing custom rule functions"
+    },
+    "functions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of custom function names to load"
+    }
+  },
+  "$defs": {
+    "Rule": {
+      "type": "object",
+      "description": "A Spectral rule definition",
+      "required": ["given", "then"],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Human-readable description of what this rule checks"
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message to display when the rule fails. Use {{value}} and {{path}} as placeholders."
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["error", "warn", "info", "hint", "off"],
+          "description": "Severity level of rule violations"
+        },
+        "given": {
+          "oneOf": [
+            { "type": "string", "description": "JSONPath expression targeting nodes to evaluate" },
+            { "type": "array", "items": { "type": "string" } }
+          ],
+          "description": "JSONPath expression(s) selecting nodes to apply the rule to"
+        },
+        "then": {
+          "oneOf": [
+            { "$ref": "#/$defs/RuleCheck" },
+            { "type": "array", "items": { "$ref": "#/$defs/RuleCheck" } }
+          ]
+        },
+        "formats": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Restrict this rule to specific formats"
+        },
+        "resolved": {
+          "type": "boolean",
+          "description": "Whether to run on resolved ($ref dereferenced) or raw document"
+        },
+        "recommended": {
+          "type": "boolean",
+          "description": "Whether this rule is included in 'recommended' severity mode"
+        }
+      }
+    },
+    "RuleCheck": {
+      "type": "object",
+      "description": "A single assertion in a Spectral rule",
+      "required": ["function"],
+      "properties": {
+        "field": {
+          "type": "string",
+          "description": "Field path within the target node to apply the function to"
+        },
+        "function": {
+          "type": "string",
+          "description": "Name of the assertion function (e.g. truthy, defined, pattern, schema, enumeration)"
+        },
+        "functionOptions": {
+          "type": "object",
+          "description": "Options passed to the assertion function",
+          "properties": {
+            "match": { "type": "string", "description": "Regex pattern for pattern function" },
+            "notMatch": { "type": "string", "description": "Regex to not match for pattern function" },
+            "values": { "type": "array", "description": "Allowed values for enumeration function" },
+            "schema": { "type": "object", "description": "JSON Schema for schema function" }
+          }
+        }
+      }
+    }
+  }
+}

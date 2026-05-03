@@ -1,0 +1,155 @@
+vocabulary:
+  name: Stoplight Vocabulary
+  description: >-
+    Domain vocabulary for Stoplight's API design, documentation, governance,
+    and open-source tooling ecosystem.
+  version: '1.0'
+  created: '2026-05-02'
+  modified: '2026-05-02'
+
+domains:
+  - name: API Design
+    description: Concepts related to API design and specification creation
+    terms:
+      - term: design-first
+        definition: >-
+          An API development approach where the API contract (OpenAPI specification)
+          is created before any implementation code, enabling parallel development
+          and better API quality. Stoplight's core philosophy.
+        aliases: [API-first, spec-first, contract-first]
+      - term: OpenAPI
+        definition: >-
+          The industry-standard specification format for REST APIs (formerly Swagger).
+          Stoplight supports OpenAPI v2.0, v3.0, and v3.1. Files are typically YAML
+          or JSON with .yml, .yaml, or .json extensions.
+        aliases: [OAS, Swagger, OpenAPI Specification]
+      - term: AsyncAPI
+        definition: >-
+          A specification format for event-driven and messaging APIs, analogous to
+          OpenAPI for REST. Stoplight supports AsyncAPI v2.x for documenting Kafka,
+          WebSocket, MQTT, and other async protocols.
+      - term: workspace
+        definition: >-
+          A Stoplight organizational unit grouping multiple API projects for a team
+          or organization. Provides shared governance, member management, and
+          cross-project discoverability.
+      - term: project
+        definition: >-
+          A Stoplight unit containing API descriptions, style guides, Markdown
+          documentation, and images. Can be connected to a Git repository (Git project)
+          or analyzed locally via CLI (local project).
+      - term: branch
+        definition: >-
+          A Git branch tracked by Stoplight for versioning API designs. Multiple
+          branches can be published simultaneously for different API versions.
+      - term: node
+        definition: >-
+          An individual file (OpenAPI spec, Markdown document, image, JSON Schema)
+          within a Stoplight project, addressable by a unique path.
+
+  - name: API Governance
+    description: Concepts related to API governance, style guides, and linting
+    terms:
+      - term: style guide
+        definition: >-
+          A set of rules and conventions enforced on API descriptions to ensure
+          consistent design across an organization. In Stoplight, style guides are
+          implemented as Spectral rulesets.
+        aliases: [API style guide, governance ruleset]
+      - term: Spectral
+        definition: >-
+          Open-source JSON/YAML linter by Stoplight for creating and enforcing API
+          governance rules. Supports OpenAPI, AsyncAPI, Arazzo, and custom formats.
+          Used both as a standalone CLI tool and embedded in the Stoplight Platform.
+      - term: ruleset
+        definition: >-
+          A Spectral configuration file (.spectral.yml or .spectral.json) defining
+          the rules to apply when linting API descriptions. Can extend built-in
+          rulesets and define custom rules.
+      - term: rule
+        definition: >-
+          A single Spectral governance check consisting of a JSONPath selector (given),
+          an assertion function (then), and a severity level. Rules encode design
+          standards like "all operations must have summaries" or "paths must use
+          kebab-case".
+      - term: severity
+        definition: >-
+          The importance level of a Spectral rule violation.
+          error stops CI pipelines; warn generates warnings; info provides tips; hint
+          shows suggestions; off disables the rule.
+        values: [error, warn, info, hint, off]
+      - term: JSONPath
+        definition: >-
+          The query language used in Spectral's 'given' field to select nodes from
+          API description documents. Allows targeting specific parts of an OpenAPI
+          spec for rule application.
+      - term: assertion function
+        definition: >-
+          A Spectral built-in or custom function applied to selected nodes to validate
+          design rules. Built-in functions include truthy, pattern, schema, enumeration,
+          casing, alphabetical, and length.
+
+  - name: Mock Servers
+    description: API mocking and simulation concepts
+    terms:
+      - term: Prism
+        definition: >-
+          Open-source HTTP mock and proxy server by Stoplight that turns OpenAPI and
+          Postman Collection files into functional API servers. Used for parallel
+          development, API testing, and contract validation.
+      - term: mock server
+        definition: >-
+          A simulated API server that responds to requests based on an API specification
+          without requiring a real backend implementation. Prism generates mock responses
+          dynamically from OpenAPI examples and schemas.
+      - term: dynamic mocking
+        definition: >-
+          Prism's ability to generate realistic random responses matching the API schema
+          when no example is defined in the specification.
+      - term: proxy mode
+        definition: >-
+          A Prism operating mode that forwards requests to a real backend while
+          validating both requests and responses against the API specification.
+      - term: request validation
+        definition: >-
+          Prism's capability to validate incoming requests against the OpenAPI spec,
+          rejecting requests with missing required parameters or invalid payloads.
+
+  - name: Documentation
+    description: API documentation concepts and tools
+    terms:
+      - term: Elements
+        definition: >-
+          Open-source documentation component library by Stoplight that builds
+          interactive API reference documentation from OpenAPI specs using embeddable
+          React or Web Components.
+      - term: try-it
+        definition: >-
+          An interactive API testing feature in Stoplight documentation allowing users
+          to make live API requests directly from the documentation browser.
+      - term: hosted documentation
+        definition: >-
+          Documentation published to a Stoplight-managed URL, automatically updated
+          when the underlying API specs change. Supports custom domains and access control.
+      - term: developer hub
+        definition: >-
+          A Stoplight workspace portal combining API reference documentation with
+          conceptual guides, tutorials, and code samples into a unified developer experience.
+
+  - name: Integration
+    description: Developer tooling and integration concepts
+    terms:
+      - term: Stoplight CLI
+        definition: >-
+          Command-line tool for integrating Stoplight governance checks into CI/CD
+          pipelines. Supports linting API descriptions and pushing results to the
+          Stoplight Platform from automated workflows.
+      - term: git integration
+        definition: >-
+          Stoplight's connection to GitHub, GitLab, Bitbucket, or Azure DevOps
+          repositories via webhooks that trigger automatic analysis when specs change.
+      - term: Arazzo
+        definition: >-
+          An emerging API workflow specification format describing sequences of API
+          calls with dependencies and conditionals. Stoplight Spectral v6+ supports
+          linting Arazzo v1.0 documents.

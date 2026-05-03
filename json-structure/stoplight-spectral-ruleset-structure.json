@@ -1,0 +1,85 @@
+{
+  "title": "Spectral Ruleset Structure",
+  "description": "Documentation of the Spectral ruleset file format (.spectral.yml) used by Stoplight for API governance",
+  "type": "object",
+  "fields": [
+    {
+      "name": "extends",
+      "type": "string | array",
+      "description": "Base rulesets to extend. Use 'spectral:oas' for OpenAPI or 'spectral:asyncapi' for AsyncAPI.",
+      "examples": ["spectral:oas", "spectral:asyncapi", ["spectral:oas", "warn"]]
+    },
+    {
+      "name": "rules",
+      "type": "object",
+      "description": "Custom rule definitions or overrides of extended rules",
+      "fields": [
+        {
+          "name": "{rule-name}",
+          "type": "object",
+          "description": "Rule identifier in kebab-case",
+          "fields": [
+            { "name": "description", "type": "string", "description": "What this rule validates" },
+            { "name": "message", "type": "string", "description": "Error message shown on failure" },
+            {
+              "name": "severity",
+              "type": "string",
+              "description": "Rule severity level",
+              "values": ["error", "warn", "info", "hint", "off"]
+            },
+            {
+              "name": "given",
+              "type": "string | array",
+              "description": "JSONPath expression(s) targeting nodes to evaluate"
+            },
+            {
+              "name": "then",
+              "type": "object | array",
+              "description": "Assertion(s) to apply to the target nodes",
+              "fields": [
+                { "name": "field", "type": "string", "description": "Optional field path within target" },
+                {
+                  "name": "function",
+                  "type": "string",
+                  "description": "Assertion function name",
+                  "values": ["truthy", "falsy", "defined", "undefined", "pattern", "schema", "enumeration", "length", "alphabetical", "casing", "xor"]
+                },
+                {
+                  "name": "functionOptions",
+                  "type": "object",
+                  "description": "Options for the assertion function (e.g. {match: '^[a-z]+'} for pattern)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "functionsDir",
+      "type": "string",
+      "description": "Relative path to directory containing custom JavaScript/TypeScript functions"
+    },
+    {
+      "name": "formats",
+      "type": "array",
+      "description": "Format identifiers restricting which documents this ruleset applies to"
+    }
+  ],
+  "builtinFunctions": {
+    "description": "Built-in Spectral assertion functions",
+    "functions": {
+      "truthy": "Passes if the value is truthy",
+      "falsy": "Passes if the value is falsy",
+      "defined": "Passes if the value is not undefined",
+      "undefined": "Passes if the value is undefined",
+      "pattern": "Validates value matches or doesn't match a regex",
+      "schema": "Validates value against a JSON Schema",
+      "enumeration": "Validates value is in a list of allowed values",
+      "length": "Validates string/array length bounds",
+      "alphabetical": "Validates object keys or array values are sorted alphabetically",
+      "casing": "Validates string follows a naming convention (camel, pascal, snake, kebab, etc.)",
+      "xor": "Validates that exactly one of the specified properties is present"
+    }
+  }
+}
