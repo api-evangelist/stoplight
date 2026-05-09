@@ -3,11 +3,11 @@
   "feeds": [
     {
       "source": "https://blog.stoplight.io/",
-      "feed_url": "https://blog.stoplight.io/feed",
-      "saved": 10,
-      "title": "Stoplight"
+      "feed_url": "https://blog.stoplight.io/feed/",
+      "title": "Stoplight",
+      "saved": 0
     }
   ],
   "post_count": 10,
-  "fetched": "2026-05-03T23:37:12Z"
+  "fetched": "2026-05-09T20:17:51Z"
 }
