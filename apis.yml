@@ -226,6 +226,14 @@ common:
     url: https://stoplight.io/api-governance
   - type: APIDocumentation
     url: https://stoplight.io/api-documentation
+  - type: Integrations
+    url: https://stoplight.io/integrations
+integrations:
+  - name: Azure
+  - name: GitHub
+  - name: GitLab
+  - name: Bitbucket
+  - name: Single sign-on
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
