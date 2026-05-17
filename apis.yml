@@ -54,7 +54,7 @@ apis:
         url: https://stoplight.io/pricing
       - type: GettingStarted
         url: https://docs.stoplight.io/docs/platform/vrjs3xapm31b7-stoplight-documentation
-      - type: Sign Up
+      - type: SignUp
         url: https://stoplight.io/welcome
       - type: Login
         url: https://stoplight.io/login
@@ -192,7 +192,7 @@ common:
     url: https://support.stoplight.io/
   - type: Contact
     url: https://stoplight.io/contact
-  - type: Status
+  - type: StatusPage
     url: https://status.stoplight.io/
   - type: PrivacyPolicy
     url: https://stoplight.io/privacy
@@ -200,7 +200,7 @@ common:
     url: https://stoplight.io/terms
   - type: Security
     url: https://stoplight.io/security-practices
-  - type: Sign Up
+  - type: SignUp
     url: https://stoplight.io/welcome
   - type: Login
     url: https://stoplight.io/login
