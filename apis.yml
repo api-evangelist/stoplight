@@ -178,6 +178,8 @@ apis:
       - type: NPM
         url: https://www.npmjs.com/package/@stoplight/cli
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/stoplight
   - type: Portal
     url: https://stoplight.io
   - type: Documentation
