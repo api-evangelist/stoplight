@@ -2,12 +2,20 @@
   "repo": "stoplight",
   "feeds": [
     {
-      "source": "https://blog.stoplight.io/",
+      "source": "https://blog.stoplight.io/feed/",
       "feed_url": "https://blog.stoplight.io/feed/",
-      "title": "Stoplight",
-      "saved": 3
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://stoplight.io/pricing",
+      "feed_url": "https://stoplight.io/pricing",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 13,
-  "fetched": "2026-05-17T20:20:35Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
