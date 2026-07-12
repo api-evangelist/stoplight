@@ -203,6 +203,8 @@ apis:
       - type: GitHubActionWorkflow
         url: https://github.com/stoplightio/stoplight-cli-workflow
 common:
+  - type: DomainSecurity
+    url: security/stoplight-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/stoplight
   - type: Portal
