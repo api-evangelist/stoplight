@@ -96,6 +96,14 @@ apis:
     tags:
       - API Testing
       - Mock Servers
+      - Open-Source
+      - OpenAPI
+      - Postman
+      - Proxy
+      - Validation
+    tags_raw:
+      - API Testing
+      - Mock Servers
       - Open Source
       - OpenAPI
       - Postman
@@ -120,6 +128,14 @@ apis:
       and governance. The spectral repository has approximately 3,115 stars.
     humanURL: https://stoplight.io/open-source/spectral
     tags:
+      - API Governance
+      - AsyncAPI
+      - CI/CD
+      - Linting
+      - Open-Source
+      - OpenAPI
+      - Style Guides
+    tags_raw:
       - API Governance
       - AsyncAPI
       - CI/CD
@@ -158,6 +174,13 @@ apis:
       Elements into the SwaggerHub experience.
     humanURL: https://stoplight.io/open-source/elements
     tags:
+      - API Documentation
+      - Components
+      - Open-Source
+      - OpenAPI
+      - React
+      - Web Components
+    tags_raw:
       - API Documentation
       - Components
       - Open Source
@@ -202,6 +225,12 @@ apis:
       into automated build workflows with GitHub Actions, CircleCI, Jenkins, and other CI platforms.
     humanURL: https://docs.stoplight.io/docs/platform/1e78f9c9bfc1e-stoplight-cli
     tags:
+      - CI/CD
+      - CLI
+      - DevOps
+      - Open-Source
+      - OpenAPI
+    tags_raw:
       - CI/CD
       - CLI
       - DevOps
