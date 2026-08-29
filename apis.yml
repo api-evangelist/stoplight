@@ -12,6 +12,19 @@ description: >-
   Azure DevOps. The Stoplight status page now redirects to stoplight.status.smartbear.com,
   confirming the operational consolidation under SmartBear.
 type: Index
+deliveryModel:
+  model: open-core
+  license: Apache-2.0
+  open_source: true
+  commercial: true
+  callable_host: false
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
@@ -279,6 +292,14 @@ apis:
       - type: Documentation
         url: https://docs.stoplight.io/docs/platform/vrjs3xapm31b7-stoplight-documentation
 common:
+  - type: IssueTracker
+    url: https://github.com/stoplightio/prism/issues
+  - type: Releases
+    url: https://github.com/stoplightio/prism/releases
+  - type: CodeOfConduct
+    url: https://github.com/stoplightio/prism/blob/main/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/stoplightio/prism/blob/main/CONTRIBUTING.md
   - type: License
     name: Apache-2.0
     url: https://github.com/stoplightio/prism/blob/main/LICENSE
