@@ -1,0 +1,26 @@
+{
+  "provider": "stoplight",
+  "sources": [
+    "_original/stoplight-openapi.json",
+    "stoplight-platform-v1-openapi.yml"
+  ],
+  "outputs": [
+    "stoplight-versions-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/stoplight-platform-v1-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "stoplight-openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "stoplight-openapi.json: tagged paths POST /versions/publish/anon -> Versions",
+    "stoplight-openapi.json: declared missing tag: Versions",
+    "stoplight-platform-v1-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "stoplight-platform-v1-openapi.yml: tagged paths POST /versions/publish/anon -> Versions",
+    "stoplight-platform-v1-openapi.yml: declared missing tag: Versions",
+    "tag 'Versions' spans 2 source specs (stoplight-openapi.json, stoplight-platform-v1-openapi.yml): per-path servers applied"
+  ],
+  "skipped": []
+}
