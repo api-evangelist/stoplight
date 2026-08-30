@@ -1,0 +1,136 @@
+generated: '2026-08-27'
+method: derived
+source: >-
+  openapi/stoplight-platform-v1-openapi.yml, plus
+  https://docs.stoplight.io/docs/platform/f76c84240244f-publish-with-the-stoplight-cli,
+  https://docs.stoplight.io/docs/prism/beeaad4dc0227-prism-cli and
+  https://docs.stoplight.io/docs/prism/cfa6f7191e544-errors
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Cross-cutting runtime semantics for the Stoplight surfaces. Most of this file is a
+  record of what is NOT documented: Stoplight is a design-first API tooling company
+  that publishes almost no runtime contract for its own API.
+auth_style:
+  scheme: apiKey
+  transport: Authorization header
+  applied_in_spec: false
+  detail: >-
+    Declared in components.securitySchemes but never referenced by a top-level
+    `security` block or by any operation. See authentication/stoplight-authentication.yml.
+base_url: https://api.stoplight.io/v1
+media_types:
+  request: application/json
+  response:
+    - application/json
+    - text/yaml
+idempotency:
+  supported: false
+  header: null
+  scope: null
+  retention: null
+  evidence: >-
+    No idempotency key, replay window or retry-safety guidance appears in the
+    contract or anywhere in the published docs. The write surface includes
+    PUT /versions/{versionId}/import, POST /versions/{versionId}/publish and
+    PUT /versions/{versionId}/unpublish — PUT semantics make import/unpublish
+    naturally idempotent, but Stoplight does not state that, and
+    POST /versions/publish/anon is explicitly non-repeatable-safe (each call creates
+    a new anonymous publication that cannot be updated or removed).
+  note: >-
+    Because nothing matching an idempotency contract exists, NO `Idempotency` pointer
+    is wired into apis.yml.
+pagination:
+  supported: false
+  evidence: No collection endpoint exists in the five-operation v1 contract.
+field_expansion:
+  supported: false
+sparse_fieldsets:
+  supported: false
+metadata:
+  supported: false
+request_id_tracing:
+  supported: false
+  evidence: No request-id or correlation header is documented on any Stoplight surface.
+versioning:
+  style: path
+  current: v1
+  policy_published: false
+  see: lifecycle/stoplight-lifecycle.yml
+error_envelope:
+  documented_schema: '#/components/schemas/standarderror'
+  documented_shape: 'empty — the schema body is {} in the published contract'
+  observed_shape:
+    message: string
+    code: number
+    type: string
+  observed_example: '{"message":"Not found","code":404,"type":"NOT_FOUND"}'
+  observed_on: https://api.stoplight.io/v1 (probed 2026-08-27)
+  rfc9457: false
+  see: errors/stoplight-problem-types.yml
+rate_limit_signaling:
+  documented: false
+  headers: []
+  exhaustion_status: null
+  see: rate-limits/stoplight-rate-limits.yml
+content_negotiation:
+  note: >-
+    The export operation negotiates format through a PATH parameter rather than
+    Accept — GET /versions/{versionId}/export/{format} with format in
+    {oas.json, oas.yaml, raml08.yaml, raml10.yaml, stoplight.json, stoplight.yaml}.
+dry_run_mode:
+  supported: false
+  evidence: >-
+    No preview, validate-only or dry-run flag on any write operation, and no
+    `--dry-run` in the Stoplight CLI push command.
+reversibility:
+  grade: documented
+  applies: true
+  detail: >-
+    Stoplight's platform API has one true reversal pair and one irreversible
+    operation, and it states the irreversibility plainly while stating no window for
+    the reversal.
+  operations:
+    - write_operation: POST /versions/{versionId}/publish
+      operationId: POST_versions-versionId-publish
+      reversal: PUT /versions/{versionId}/unpublish
+      reversal_operationId: PUT_versions-versionId-unpublish
+      window: null
+      window_documented: false
+      docs: openapi/stoplight-platform-v1-openapi.yml
+      note: >-
+        Publish/unpublish is a documented, symmetric reversal pair. No time limit is
+        stated anywhere, so the reversal is `documented` rather than `verified`. Do
+        NOT infer that it is unbounded.
+    - write_operation: POST /versions/publish/anon
+      operationId: POST_versions-publish-anon
+      reversal: none
+      window: null
+      window_documented: false
+      irreversible: true
+      docs: openapi/stoplight-platform-v1-openapi.yml
+      note: >-
+        The provider's own operation description states the limitations verbatim:
+        "Cannot update/remove the documentation". An anonymous publication is a
+        one-way action with no reversal path — the single most important
+        reversibility fact in this contract, and Stoplight does document it.
+    - write_operation: PUT /versions/{versionId}/import
+      operationId: PUT_versions-versionId-import
+      reversal: none-documented
+      window: null
+      window_documented: false
+      note: >-
+        Import overwrites the version's specification content. No undo, restore or
+        revision-rollback operation is described. Stoplight's Git-backed projects
+        give a human branch history in the UI, but that is not an API reversal.
+  grading_rationale: >-
+    A reversal path exists and is documented (publish -> unpublish), but no window is
+    stated for it, so this grades `documented` and not `verified`. No window was
+    invented to close the gap.
+cross_links:
+  errors: errors/stoplight-problem-types.yml
+  error_codes: errors/stoplight-error-codes.yml
+  lifecycle: lifecycle/stoplight-lifecycle.yml
+  authentication: authentication/stoplight-authentication.yml
+  rate_limits: rate-limits/stoplight-rate-limits.yml
+  sandbox: sandbox/stoplight-sandbox.yml

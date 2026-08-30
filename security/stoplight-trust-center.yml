@@ -1,0 +1,58 @@
+generated: '2026-08-27'
+method: searched
+source: https://smartbear.com/security/ and https://trust.smartbear.com/
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Trust and compliance posture covering Stoplight. Stoplight publishes no trust
+  center of its own; since the 2023 SmartBear acquisition its compliance program is
+  the parent's, published at trust.smartbear.com and summarised on smartbear.com/security.
+trust_center:
+  url: https://trust.smartbear.com/
+  status: 200
+  probed: '2026-08-27'
+  operator: SmartBear
+  platform: SafeBase
+  note: >-
+    The trust center itself is a client-rendered SafeBase application; the named
+    certifications below were read from the server-rendered SmartBear security page,
+    not from the SafeBase shell.
+summary_page:
+  url: https://smartbear.com/security/
+  status: 200
+  probed: '2026-08-27'
+certifications:
+  - name: SOC 2
+    scope: Service Organization Control
+    source: https://smartbear.com/security/
+    evidence_type: named-on-vendor-page
+  - name: ISO/IEC 27001
+    scope: Information Security Management
+    source: https://smartbear.com/security/
+    evidence_type: named-on-vendor-page
+  - name: NIST CSF
+    scope: Cybersecurity Framework alignment
+    source: https://smartbear.com/security/
+    evidence_type: named-on-vendor-page
+privacy_regimes:
+  - name: GDPR
+    source: https://smartbear.com/security/
+  - name: CCPA
+    source: https://smartbear.com/security/
+practices_published:
+  - Secure design and architecture reviews
+  - Code scanning and dependency analysis
+  - Vulnerability management and remediation
+  - Controlled change management processes
+  - Monitoring, detection and incident response
+stoplight_specific:
+  url: https://stoplight.io/security-practices
+  status: 200
+  probed: '2026-08-27'
+  note: >-
+    Stoplight's own product security-practices page, still served on the Stoplight
+    domain and still the most product-specific security document available.
+caveat: >-
+  Certification artifacts (audit reports, certificates) are behind the SafeBase
+  request flow. Nothing here asserts a report was inspected — only that SmartBear
+  publicly names these certifications for the estate that includes Stoplight.

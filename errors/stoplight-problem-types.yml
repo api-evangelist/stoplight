@@ -1,0 +1,48 @@
+generated: '2026-08-27'
+method: derived
+source: openapi/stoplight-platform-v1-openapi.yml
+format: none
+envelope:
+  media_type: application/json
+  schema: '#/components/schemas/standarderror'
+  note: >-
+    The v1 contract references a `standarderror` schema on every 4xx/5xx response,
+    but the schema body is EMPTY ({}) in the published document. The error shape is
+    therefore undocumented: an agent knows an error object comes back and knows
+    nothing about its fields. Not RFC 9457 — no application/problem+json anywhere.
+observed_envelope:
+  note: >-
+    Observed live on api.stoplight.io during this pass (2026-08-27), NOT documented
+    by the provider.
+  example:
+    message: Not found
+    code: 404
+    type: NOT_FOUND
+problems:
+  - status: 400
+    title: Bad Request
+    schema: '#/components/schemas/standarderror'
+    source_operation: openapi/stoplight-platform-v1-openapi.yml#POST_versions-publish-anon
+  - status: 401
+    title: Unauthorized
+    schema: '#/components/schemas/standarderror'
+    source_operation: >-
+      openapi/stoplight-platform-v1-openapi.yml#POST_versions-publish-anon,
+      GET_versions-versionId-export-format, PUT_versions-versionId-import,
+      POST_versions-versionId-publish, PUT_versions-versionId-unpublish
+  - status: 404
+    title: Not Found
+    schema: '#/components/schemas/standarderror'
+    source_operation: >-
+      openapi/stoplight-platform-v1-openapi.yml#POST_versions-publish-anon,
+      GET_versions-versionId-export-format, PUT_versions-versionId-import,
+      POST_versions-versionId-publish, PUT_versions-versionId-unpublish
+  - status: 500
+    title: Internal Server Error
+    schema: '#/components/schemas/standarderror'
+    source_operation: openapi/stoplight-platform-v1-openapi.yml#POST_versions-publish-anon
+coverage:
+  operations: 5
+  operations_with_4xx: 5
+  operations_with_5xx: 1
+  distinct_status_codes: 4

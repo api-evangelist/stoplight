@@ -1,0 +1,81 @@
+generated: '2026-08-27'
+method: derived
+source: openapi/stoplight-platform-v1-openapi.yml
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Entity graph derived from the Stoplight v1 Platform contract. The contract is
+  deliberately thin — five operations, two schemas, one of which is empty — so the
+  graph below is small and most of it is inferred from path parameters rather than
+  from $ref links.
+entities:
+  - name: Version
+    id_field: versionId
+    id_location: path
+    description: >-
+      The unit every operation in the contract acts on: a version of an API
+      description inside Stoplight. Export, import, publish and unpublish are all
+      addressed as /versions/{versionId}/....
+    schema: null
+    schema_note: >-
+      No Version schema is defined in components.schemas. The entity is inferred
+      entirely from the path template and the operation descriptions.
+    operations:
+      - GET_versions-versionId-export-format
+      - PUT_versions-versionId-import
+      - POST_versions-versionId-publish
+      - PUT_versions-versionId-unpublish
+  - name: Publication
+    id_field: url
+    id_location: response body
+    description: >-
+      The hosted documentation produced by a publish. The 200 response of
+      POST /versions/publish/anon returns {"url": "..."} — the published docs URL is
+      the only identifier a caller receives.
+    schema: inline (properties.url, required)
+    operations:
+      - POST_versions-publish-anon
+      - POST_versions-versionId-publish
+  - name: SharedUser
+    schema: '#/components/schemas/shared-user'
+    description: >-
+      Declared in components.schemas with a `username` string and one property whose
+      key is the empty string. Not referenced by any operation, request body or
+      response in the published document.
+    orphan: true
+  - name: StandardError
+    schema: '#/components/schemas/standarderror'
+    description: The error object referenced by every 4xx/5xx response.
+    orphan: false
+    schema_note: The schema body is empty ({}) — no properties are described.
+relationships:
+  - from: Version
+    to: Publication
+    type: has_many
+    via: POST /versions/{versionId}/publish
+    confidence: medium
+    note: >-
+      Inferred from operation semantics, not from a $ref or an id field — the
+      contract never returns a Publication identifier for the version-scoped publish.
+  - from: Publication
+    to: Version
+    type: belongs_to
+    via: versionId (path parameter)
+    confidence: medium
+    exception: >-
+      An anonymous publication (POST /versions/publish/anon) belongs to NO version —
+      it is created from a posted document or URL and, per Stoplight's own
+      description, can never be updated or removed.
+id_prefixes:
+  observed: []
+  note: >-
+    The v1 contract declares no id format. Elsewhere on the platform, Stoplight uses
+    base64 identifiers of the form prj:<n> / wk:<n> / br:<n> (observed 2026-08-27 on
+    stoplight.io/api/v1/projects/cHJqOjI/... — cHJqOjI decodes to "prj:2"). That
+    scheme belongs to the current undocumented platform API, not to v1.
+coverage:
+  entities: 4
+  entities_with_schema: 2
+  orphan_schemas: 1
+  relationships: 2
+  operations_covered: 5

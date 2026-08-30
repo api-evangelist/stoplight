@@ -1,0 +1,54 @@
+generated: '2026-08-27'
+method: searched
+source: >-
+  openapi/stoplight-platform-v1-openapi.yml components.securitySchemes, plus
+  https://docs.stoplight.io/docs/platform/f76c84240244f-publish-with-the-stoplight-cli
+docs: https://docs.stoplight.io/docs/platform/f76c84240244f-publish-with-the-stoplight-cli
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Authentication profile for the Stoplight surfaces. Stoplight publishes no
+  consolidated API authentication reference; the two credential models below are
+  the ones it actually documents.
+schemes:
+  - id: Authorization
+    type: apiKey
+    in: header
+    name: Authorization
+    applies_to: Stoplight v1 (Classic) Platform API
+    source: openapi/stoplight-platform-v1-openapi.yml
+    method: derived
+    note: >-
+      Declared in components.securitySchemes of the v1 contract. The spec declares
+      NO top-level `security` and no per-operation `security`, so the scheme is
+      defined but never applied — an agent cannot tell from the contract which
+      operations require it. Every operation does declare a 401 response, which is
+      the only evidence that the header is required.
+  - id: project-token
+    type: apiKey
+    in: cli-flag
+    name: --ci-token
+    applies_to: Stoplight CLI (@stoplight/cli) project publishing
+    source: https://docs.stoplight.io/docs/platform/f76c84240244f-publish-with-the-stoplight-cli
+    method: searched
+    note: >-
+      A per-project CI token, issued from
+      https://{workspace}.stoplight.io/settings/{project}/automation and passed as
+      `npx @stoplight/cli@5 push --ci-token {project-token} --url https://{workspace-name}.stoplight.io`.
+      Scoped to one project, not to the workspace.
+oauth2: false
+openid_connect: false
+mutual_tls: false
+workspace_sso:
+  supported: true
+  mechanisms:
+    - SAML SSO
+    - LDAP
+  docs: https://docs.stoplight.io/docs/platform/692808d0afabb-single-sign-on
+  note: >-
+    Human workspace sign-in only (Azure, Google, Okta, OneLogin, Ping, Keycloak,
+    CyberArk setup guides are published). Not an API credential path.
+gaps:
+  - No published token-lifetime, rotation or revocation policy.
+  - No OAuth 2.0 or OpenID Connect surface for API access.
+  - securitySchemes is declared but never applied to any operation in the contract.
