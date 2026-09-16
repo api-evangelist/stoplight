@@ -1,16 +1,13 @@
 aid: stoplight
 name: Stoplight
-description: >-
-  Stoplight is a collaborative, design-first API platform providing a visual editor
-  for OpenAPI specifications, interactive hosted documentation, automatic mock servers,
-  API style guides and governance, and open-source tools including Prism (mock server),
-  Spectral (JSON/YAML linter), and Elements (documentation components). Acquired by
-  SmartBear in 2023, Stoplight is now positioned within SmartBear's API Hub solution
-  group alongside SwaggerHub, with Spectral, Prism, and Elements progressively integrated
-  into the unified API Hub experience. The platform supports OpenAPI v3.1, v3.0, v2.0,
-  Arazzo v1.0, and AsyncAPI v2.x, with integrations for GitHub, GitLab, Bitbucket, and
-  Azure DevOps. The Stoplight status page now redirects to stoplight.status.smartbear.com,
-  confirming the operational consolidation under SmartBear.
+description: Stoplight is a collaborative, design-first API platform providing a visual editor for OpenAPI
+  specifications, interactive hosted documentation, automatic mock servers, API style guides and governance,
+  and open-source tools including Prism (mock server), Spectral (JSON/YAML linter), and Elements (documentation
+  components). Acquired by SmartBear in 2023, Stoplight is now positioned within SmartBear's API Hub solution
+  group alongside SwaggerHub, with Spectral, Prism, and Elements progressively integrated into the unified
+  API Hub experience. The platform supports OpenAPI v3.1, v3.0, v2.0, Arazzo v1.0, and AsyncAPI v2.x,
+  with integrations for GitHub, GitLab, Bitbucket, and Azure DevOps. The Stoplight status page now redirects
+  to stoplight.status.smartbear.com, confirming the operational consolidation under SmartBear.
 type: Index
 deliveryModel:
   model: open-core
@@ -41,31 +38,30 @@ position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/stoplight.png
 tags:
-  - API Design
-  - API Documentation
-  - API Governance
-  - AsyncAPI
-  - Design-First
-  - Developer Tools
-  - Linting
-  - Mock Servers
-  - OpenAPI
-  - SmartBear API Hub
-  - Style Guides
+- API Design
+- API Documentation
+- API Governance
+- AsyncAPI
+- Design-First
+- Developer Tools
+- Linting
+- Mock Servers
+- OpenAPI
+- SmartBear API Hub
+- Style Guides
 created: '2026-03-03'
-modified: '2026-08-27'
+modified: '2026-09-16'
 url: https://raw.githubusercontent.com/api-evangelist/stoplight/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
 - aid: stoplight:stoplight-platform
   name: Stoplight Platform
-  description: >-
-    Stoplight Platform is a SaaS collaborative API design and documentation management tool providing
-    a visual editor for OpenAPI specifications, interactive hosted documentation, automatic mock servers,
-    API style guides, governance features, and multi-branch Git integration. Teams design, document, mock,
-    and govern APIs using a design-first approach. Supports OpenAPI v3.1/v3.0/v2.0, Arazzo v1.0, and AsyncAPI
-    v2.x. Integrates with GitHub, GitLab, Bitbucket, and Azure DevOps. Now part of SmartBear's API Hub
-    solution group alongside SwaggerHub.
+  description: Stoplight Platform is a SaaS collaborative API design and documentation management tool
+    providing a visual editor for OpenAPI specifications, interactive hosted documentation, automatic
+    mock servers, API style guides, governance features, and multi-branch Git integration. Teams design,
+    document, mock, and govern APIs using a design-first approach. Supports OpenAPI v3.1/v3.0/v2.0, Arazzo
+    v1.0, and AsyncAPI v2.x. Integrates with GitHub, GitLab, Bitbucket, and Azure DevOps. Now part of
+    SmartBear's API Hub solution group alongside SwaggerHub.
   humanURL: https://stoplight.io
   tags:
   - API Design
@@ -97,11 +93,10 @@ apis:
     url: https://stoplight.status.smartbear.com/
 - aid: stoplight:prism
   name: Stoplight Prism
-  description: >-
-    Prism is an open-source HTTP mock and proxy server that turns any OpenAPI v2/v3 or Postman Collection
-    file into a realistic API server with mocking, transformations, and validations. Enables frontend
-    and backend teams to develop in parallel using API descriptions. Can be used as a local CLI tool or
-    via hosted Stoplight mock servers. Supports dynamic example generation, request/response validation,
+  description: Prism is an open-source HTTP mock and proxy server that turns any OpenAPI v2/v3 or Postman
+    Collection file into a realistic API server with mocking, transformations, and validations. Enables
+    frontend and backend teams to develop in parallel using API descriptions. Can be used as a local CLI
+    tool or via hosted Stoplight mock servers. Supports dynamic example generation, request/response validation,
     and content negotiation. The prism repository on GitHub has approximately 4,943 stars and is one of
     Stoplight's flagship open-source projects.
   humanURL: https://stoplight.io/open-source/prism
@@ -130,13 +125,12 @@ apis:
     url: https://www.npmjs.com/package/@stoplight/prism-cli
 - aid: stoplight:spectral
   name: Stoplight Spectral
-  description: >-
-    Spectral is an open-source JSON and YAML linter for creating automated API style guides and governance
-    rulesets. Provides built-in support for OpenAPI v3.1, v3.0, and v2.0, Arazzo v1.0, and AsyncAPI v2.x.
-    Enables teams to validate API descriptions against custom rulesets, enforce consistent design standards,
-    and integrate API governance into CI/CD pipelines. Supports custom functions and third-party ruleset
-    packages via npm. SmartBear has integrated Spectral into SwaggerHub for API design and governance.
-    The spectral repository has approximately 3,115 stars.
+  description: Spectral is an open-source JSON and YAML linter for creating automated API style guides
+    and governance rulesets. Provides built-in support for OpenAPI v3.1, v3.0, and v2.0, Arazzo v1.0,
+    and AsyncAPI v2.x. Enables teams to validate API descriptions against custom rulesets, enforce consistent
+    design standards, and integrate API governance into CI/CD pipelines. Supports custom functions and
+    third-party ruleset packages via npm. SmartBear has integrated Spectral into SwaggerHub for API design
+    and governance. The spectral repository has approximately 3,115 stars.
   humanURL: https://stoplight.io/open-source/spectral
   tags:
   - API Governance
@@ -175,13 +169,12 @@ apis:
     url: https://github.com/stoplightio/spectral-documentation
 - aid: stoplight:elements
   name: Stoplight Elements
-  description: >-
-    Elements is an open-source toolkit for building beautiful, interactive API documentation from OpenAPI
-    specifications using embeddable React or Web Components. Provides highly customizable, interactive
-    API reference documentation, including operation listings, request/response examples, schema viewers,
-    and try-it functionality. Can be embedded in any web application or used as a standalone documentation
-    site. The elements repository has approximately 2,425 stars. SmartBear has integrated Elements into
-    the SwaggerHub experience.
+  description: Elements is an open-source toolkit for building beautiful, interactive API documentation
+    from OpenAPI specifications using embeddable React or Web Components. Provides highly customizable,
+    interactive API reference documentation, including operation listings, request/response examples,
+    schema viewers, and try-it functionality. Can be embedded in any web application or used as a standalone
+    documentation site. The elements repository has approximately 2,425 stars. SmartBear has integrated
+    Elements into the SwaggerHub experience.
   humanURL: https://stoplight.io/open-source/elements
   tags:
   - API Documentation
@@ -208,12 +201,11 @@ apis:
     url: https://elements-demo.stoplight.io/
 - aid: stoplight:studio
   name: Stoplight Studio
-  description: >-
-    Stoplight Studio is the visual API design and technical writing editor included in the Stoplight Platform.
-    Provides a form-based editor for creating and editing OpenAPI v2 and v3 specifications with full validation,
-    mocking, and modeling support. Includes a built-in Markdown editor, image manager, and the ability
-    to publish documentation to the Stoplight documentation platform. Available as a web app and desktop
-    application. The studio repository has approximately 867 stars.
+  description: Stoplight Studio is the visual API design and technical writing editor included in the
+    Stoplight Platform. Provides a form-based editor for creating and editing OpenAPI v2 and v3 specifications
+    with full validation, mocking, and modeling support. Includes a built-in Markdown editor, image manager,
+    and the ability to publish documentation to the Stoplight documentation platform. Available as a web
+    app and desktop application. The studio repository has approximately 867 stars.
   humanURL: https://stoplight.io/api-design
   tags:
   - API Design
@@ -227,11 +219,10 @@ apis:
     url: https://github.com/stoplightio/studio
 - aid: stoplight:cli
   name: Stoplight CLI
-  description: >-
-    The Stoplight CLI enables programmatic linting of API descriptions and pushing analysis results to
-    the Stoplight Platform from CI/CD pipelines. Supports analyzing local projects, running Spectral rulesets,
-    and integrating API governance checks into automated build workflows with GitHub Actions, CircleCI,
-    Jenkins, and other CI platforms.
+  description: The Stoplight CLI enables programmatic linting of API descriptions and pushing analysis
+    results to the Stoplight Platform from CI/CD pipelines. Supports analyzing local projects, running
+    Spectral rulesets, and integrating API governance checks into automated build workflows with GitHub
+    Actions, CircleCI, Jenkins, and other CI platforms.
   humanURL: https://docs.stoplight.io/docs/platform/f76c84240244f-publish-with-the-stoplight-cli
   tags:
   - CI/CD
@@ -273,170 +264,169 @@ apis:
   - type: Documentation
     url: https://docs.stoplight.io/docs/platform/vrjs3xapm31b7-stoplight-documentation
 common:
-  - type: Website
-    url: https://www.smartbear.com/
-  - type: IssueTracker
-    url: https://github.com/stoplightio/prism/issues
-  - type: Releases
-    url: https://github.com/stoplightio/prism/releases
-  - type: CodeOfConduct
-    url: https://github.com/stoplightio/prism/blob/main/CODE_OF_CONDUCT.md
-  - type: ContributionGuide
-    url: https://github.com/stoplightio/prism/blob/main/CONTRIBUTING.md
-  - type: License
-    name: Apache-2.0
-    url: https://github.com/stoplightio/prism/blob/main/LICENSE
-  - type: DomainSecurity
-    url: security/stoplight-domain-security.yml
-  - type: Portal
-    url: https://stoplight.io
-  - type: Documentation
-    url: https://docs.stoplight.io/
-  - type: Pricing
-    url: https://stoplight.io/pricing
-  - type: Blog
-    url: https://blog.stoplight.io/
-  - type: About
-    url: https://stoplight.io/about
-  - type: Support
-    url: https://support.stoplight.io/
-  - type: Contact
-    url: https://stoplight.io/contact
-  - type: StatusPage
-    url: https://stoplight.status.smartbear.com/
-  - type: PrivacyPolicy
-    url: https://stoplight.io/privacy
-  - type: TermsOfService
-    url: https://stoplight.io/terms
-  - type: Security
-    url: https://stoplight.io/security-practices
-  - type: SignUp
-    url: https://stoplight.io/welcome
-  - type: Login
-    url: https://stoplight.io/login
-  - type: GitHubOrganization
-    url: https://github.com/stoplightio
-  - type: OpenSource
-    url: https://stoplight.io/open-source
-  - type: GettingStarted
-    url: https://stoplight.io/api-development-guide
-  - type: Solutions
-    url: https://stoplight.io/solutions
-  - type: CaseStudies
-    url: https://stoplight.io/case-studies
-  - type: Webinars
-    url: https://stoplight.io/webinars
-  - type: Guides
-    url: https://stoplight.io/guides
-  - type: Press
-    url: https://stoplight.io/press
-  - type: YouTube
-    url: https://www.youtube.com/stoplight
-  - type: APIGovernance
-    url: https://stoplight.io/api-governance
-  - type: APIDocumentation
-    url: https://stoplight.io/api-documentation
-  - type: Integrations
-    url: https://stoplight.io/integrations
-  - type: ParentCompany
-    url: https://smartbear.com/
-  - type: OpenAPI
-    url: openapi/stoplight-platform-v1-openapi.yml
-  - type: Overlay
-    url: overlays/stoplight-platform-v1-overlay.yaml
-  - type: Authentication
-    url: authentication/stoplight-authentication.yml
-  - type: ErrorCatalog
-    url: errors/stoplight-problem-types.yml
-  - type: ErrorCodes
-    url: errors/stoplight-error-codes.yml
-  - type: Conventions
-    url: conventions/stoplight-conventions.yml
-  - type: DataModel
-    url: data-model/stoplight-data-model.yml
-  - type: Packages
-    url: packages/stoplight-packages.yml
-  - type: SDKs
-    url: packages/stoplight-packages.yml
-  - type: CLI
-    url: cli/stoplight-cli.yml
-  - type: Components
-    url: components/stoplight-components.yml
-  - type: Sandbox
-    url: sandbox/stoplight-sandbox.yml
-  - type: Lifecycle
-    url: lifecycle/stoplight-lifecycle.yml
-  - type: ChangeLog
-    url: changelog/stoplight-changelog.yml
-  - type: Conformance
-    url: conformance/stoplight-conformance.yml
-  - type: Compliance
-    url: https://smartbear.com/security/
-  - type: TrustCenter
-    url: security/stoplight-trust-center.yml
-  - type: VulnerabilityDisclosure
-    url: security/stoplight-vulnerability-disclosure.yml
-  - type: Plans
-    url: plans/stoplight-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/stoplight-rate-limits.yml
-  - type: FinOps
-    url: finops/stoplight-finops.yml
-  - type: Vocabulary
-    url: vocabulary/stoplight-vocabulary.yml
-  - type: Rules
-    url: rules/stoplight-jsonschema-spectral-rules.yml
-  - type: JSONSchema
-    url: json-schema/stoplight-spectral-ruleset-schema.json
-  - type: JSONStructure
-    url: json-structure/stoplight-spectral-ruleset-structure.json
-  - type: JSONLD
-    url: json-ld/stoplight-context.jsonld
-  - type: LLMsTxt
-    url: llms/stoplight-llms.txt
-  - type: AgentSkill
-    url: skills/_index.yml
-  - type: Community
-    url: https://community.smartbear.com/category/stoplight/discussions/stoplight
+- type: Website
+  url: https://www.smartbear.com/
+- type: IssueTracker
+  url: https://github.com/stoplightio/prism/issues
+- type: Releases
+  url: https://github.com/stoplightio/prism/releases
+- type: CodeOfConduct
+  url: https://github.com/stoplightio/prism/blob/main/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/stoplightio/prism/blob/main/CONTRIBUTING.md
+- type: License
+  name: Apache-2.0
+  url: https://github.com/stoplightio/prism/blob/main/LICENSE
+- type: DomainSecurity
+  url: security/stoplight-domain-security.yml
+- type: Portal
+  url: https://stoplight.io
+- type: Documentation
+  url: https://docs.stoplight.io/
+- type: Pricing
+  url: https://stoplight.io/pricing
+- type: Blog
+  url: https://blog.stoplight.io/
+- type: About
+  url: https://stoplight.io/about
+- type: Support
+  url: https://support.stoplight.io/
+- type: Contact
+  url: https://stoplight.io/contact
+- type: StatusPage
+  url: https://stoplight.status.smartbear.com/
+- type: PrivacyPolicy
+  url: https://stoplight.io/privacy
+- type: TermsOfService
+  url: https://stoplight.io/terms
+- type: Security
+  url: https://stoplight.io/security-practices
+- type: SignUp
+  url: https://stoplight.io/welcome
+- type: Login
+  url: https://stoplight.io/login
+- type: GitHubOrganization
+  url: https://github.com/stoplightio
+- type: OpenSource
+  url: https://stoplight.io/open-source
+- type: GettingStarted
+  url: https://stoplight.io/api-development-guide
+- type: Solutions
+  url: https://stoplight.io/solutions
+- type: CaseStudies
+  url: https://stoplight.io/case-studies
+- type: Webinars
+  url: https://stoplight.io/webinars
+- type: Guides
+  url: https://stoplight.io/guides
+- type: Press
+  url: https://stoplight.io/press
+- type: YouTube
+  url: https://www.youtube.com/stoplight
+- type: APIGovernance
+  url: https://stoplight.io/api-governance
+- type: APIDocumentation
+  url: https://stoplight.io/api-documentation
+- type: Integrations
+  url: https://stoplight.io/integrations
+- type: ParentCompany
+  url: https://smartbear.com/
+- type: OpenAPI
+  url: openapi/_original/stoplight-platform-v1-openapi.yml
+- type: Overlay
+  url: overlays/stoplight-platform-v1-overlay.yaml
+- type: Authentication
+  url: authentication/stoplight-authentication.yml
+- type: ErrorCatalog
+  url: errors/stoplight-problem-types.yml
+- type: ErrorCodes
+  url: errors/stoplight-error-codes.yml
+- type: Conventions
+  url: conventions/stoplight-conventions.yml
+- type: DataModel
+  url: data-model/stoplight-data-model.yml
+- type: Packages
+  url: packages/stoplight-packages.yml
+- type: SDKs
+  url: packages/stoplight-packages.yml
+- type: CLI
+  url: cli/stoplight-cli.yml
+- type: Components
+  url: components/stoplight-components.yml
+- type: Sandbox
+  url: sandbox/stoplight-sandbox.yml
+- type: Lifecycle
+  url: lifecycle/stoplight-lifecycle.yml
+- type: ChangeLog
+  url: changelog/stoplight-changelog.yml
+- type: Conformance
+  url: conformance/stoplight-conformance.yml
+- type: Compliance
+  url: https://smartbear.com/security/
+- type: TrustCenter
+  url: security/stoplight-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/stoplight-vulnerability-disclosure.yml
+- type: Plans
+  url: plans/stoplight-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/stoplight-rate-limits.yml
+- type: FinOps
+  url: finops/stoplight-finops.yml
+- type: Vocabulary
+  url: vocabulary/stoplight-vocabulary.yml
+- type: Rules
+  url: rules/stoplight-jsonschema-spectral-rules.yml
+- type: JSONSchema
+  url: json-schema/stoplight-spectral-ruleset-schema.json
+- type: JSONStructure
+  url: json-structure/stoplight-spectral-ruleset-structure.json
+- type: JSONLD
+  url: json-ld/stoplight-context.jsonld
+- type: LLMsTxt
+  url: llms/stoplight-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Community
+  url: https://community.smartbear.com/category/stoplight/discussions/stoplight
 integrations:
-  - name: GitHub
-  - name: GitLab
-  - name: Bitbucket
-  - name: Azure DevOps
-  - name: SAML SSO
-  - name: LDAP
-  - name: Google Analytics
+- name: GitHub
+- name: GitLab
+- name: Bitbucket
+- name: Azure DevOps
+- name: SAML SSO
+- name: LDAP
+- name: Google Analytics
 plans:
-  - name: Free
-    price: $0
-    users: 1
-    projects: 1
-  - name: Basic
-    priceAnnual: $44/month
-    priceMonthly: $56/month
-    users: 3
-    additionalUser: $11-$14
-    projects: unlimited
-  - name: Startup
-    priceAnnual: $113/month
-    priceMonthly: $147/month
-    users: 8
-    additionalUser: $11-$14
-    projects: unlimited
-  - name: Pro Team
-    priceAnnual: $362/month
-    priceMonthly: $453/month
-    users: 15
-    additionalUser: $22-$27
-    teams: 20
-  - name: Enterprise
-    price: custom
-    users: unlimited
-    projects: unlimited
+- name: Free
+  price: $0
+  users: 1
+  projects: 1
+- name: Basic
+  priceAnnual: $44/month
+  priceMonthly: $56/month
+  users: 3
+  additionalUser: $11-$14
+  projects: unlimited
+- name: Startup
+  priceAnnual: $113/month
+  priceMonthly: $147/month
+  users: 8
+  additionalUser: $11-$14
+  projects: unlimited
+- name: Pro Team
+  priceAnnual: $362/month
+  priceMonthly: $453/month
+  users: 15
+  additionalUser: $22-$27
+  teams: 20
+- name: Enterprise
+  price: custom
+  users: unlimited
+  projects: unlimited
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
-
+- FN: Kin Lane
+  email: kin@apievangelist.com
 x-enrichment:
   date: '2026-08-27'
   status: enriched
