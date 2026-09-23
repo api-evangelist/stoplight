@@ -1,0 +1,28 @@
+generated: '2026-08-27'
+method: generated
+source: openapi/stoplight-platform-v1-openapi.yml
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Packaged Agent Skills for the Stoplight surfaces. Both are grounded in real
+  operationIds taken from the only contract Stoplight has published for its own API —
+  the legacy v1 (Classic) Platform API — and both carry that caveat in their body.
+  No provider-published skills or AGENTS.md were found on any Stoplight or SmartBear
+  host.
+skills:
+  - name: stoplight-export-api-description
+    file: stoplight-export-api-description.md
+    api: Stoplight v1 Platform API
+    operations:
+      - GET_versions-versionId-export-format
+  - name: stoplight-publish-api-docs
+    file: stoplight-publish-api-docs.md
+    api: Stoplight v1 Platform API
+    operations:
+      - POST_versions-versionId-publish
+      - PUT_versions-versionId-unpublish
+      - PUT_versions-versionId-import
+      - POST_versions-publish-anon
+coverage:
+  operations_in_spec: 5
+  operations_covered: 5

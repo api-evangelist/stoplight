@@ -1,0 +1,112 @@
+generated: '2026-08-27'
+method: searched
+source: >-
+  https://docs.stoplight.io/docs/getting-started/elements/a71d7fcfefcd6-elements-in-html,
+  https://docs.stoplight.io/docs/getting-started/elements/b074dc47b2826-elements-configuration-options,
+  https://docs.stoplight.io/docs/elements/d6a8ba3f3c186-stoplight-elements
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Stoplight Elements is a first-party embeddable UI component library — the
+  client-side surface a customer drops into their own developer portal. Distinct from
+  an SDK: these render API documentation in a browser, they do not call the Stoplight
+  API.
+families:
+  - id: elements
+    name: Stoplight Elements
+    docs: https://docs.stoplight.io/docs/elements/7edeeac271ab2-elements
+    repository: https://github.com/stoplightio/elements
+    demo: https://elements-demo.stoplight.io/
+    description: >-
+      Interactive API reference documentation rendered from an OpenAPI document —
+      operation listings, request/response examples, schema viewers and Try It.
+    delivery:
+      - kind: web-component
+        tag: <elements-api />
+        loader_js: https://unpkg.com/@stoplight/elements/web-components.min.js
+        loader_css: https://unpkg.com/@stoplight/elements/styles.min.css
+        pinned: false
+        note: >-
+          The loader URLs Stoplight documents are unpinned and float to npm `latest`.
+      - kind: react
+        package: '@stoplight/elements'
+        docs: https://docs.stoplight.io/docs/elements/b5f929847c884-getting-started-with-elements-in-react
+      - kind: angular
+        docs: https://docs.stoplight.io/docs/elements/944ed4c7c649f-using-elements-in-angular
+    components:
+      - name: elements-api
+        type: web-component
+        description: >-
+          The only web component in the Elements package. Renders API reference
+          documentation for an OpenAPI document.
+        options:
+          - name: apiDescriptionUrl
+            description: 'OpenAPI document URL; supports http(s) and remote $ref'
+          - name: apiDescriptionDocument
+            description: OpenAPI document as a YAML string, JSON string or JS object
+          - name: basePath
+            description: For history routing when docs live in a subdirectory
+          - name: hideInternal
+            description: Filter out content marked with x-internal
+          - name: hideTryIt
+            description: Hide the Try It feature entirely
+          - name: hideTryItPanel
+            description: Hide the Try It panel but keep the request sample
+          - name: hideSchemas
+            description: Hide schemas in the sidebar table of contents
+          - name: hideExport
+            description: Hide the Export button on the overview section
+          - name: tryItCorsProxy
+            description: URL of a CORS proxy prepended to Try It requests
+          - name: tryItCredentialsPolicy
+            description: 'omit (default) | include | same-origin'
+          - name: logo
+            description: URL of a small square logo shown above the table of contents
+          - name: layout
+            description: 'sidebar (default) | responsive | stacked'
+          - name: router
+            description: 'history (default) | hash | memory | static'
+  - id: elements-dev-portal
+    name: Stoplight Elements Dev Portal
+    docs: https://docs.stoplight.io/docs/elements/6b16c6f90bddb-introduction-to-elements-dev-portal
+    package: '@stoplight/elements-dev-portal'
+    description: >-
+      The multi-API developer-portal superset of Elements — table of contents, search
+      and article rendering across a whole Stoplight project.
+    delivery:
+      - kind: react
+        docs: https://docs.stoplight.io/docs/elements/11b969f962273-elements-dev-portal-in-react
+      - kind: web-component
+        docs: https://docs.stoplight.io/docs/elements/e55c6844322fc-elements-dev-portal-in-html
+      - kind: angular
+        docs: https://docs.stoplight.io/docs/elements/e5f30e213b8df-elements-dev-portal-in-angular
+    features:
+      - Dev Portal Search (https://docs.stoplight.io/docs/elements/455c523958895-elements-dev-portal-search)
+  - id: ui-kit
+    name: Stoplight UI Kit
+    repository: https://github.com/stoplightio/ui-kit
+    description: Foundational React components underlying the Stoplight ecosystem.
+    official: true
+    note: >-
+      Published as open source and actively pushed (2026-08-21), but Stoplight does
+      not document it as a customer-facing embed target.
+  - id: json-schema-viewer
+    name: JSON Schema Viewer
+    repository: https://github.com/stoplightio/json-schema-viewer
+    description: Standalone React component that renders a JSON Schema.
+    official: true
+loaders:
+  - registry: cdn
+    url: https://unpkg.com/@stoplight/elements/web-components.min.js
+    pinned: false
+  - registry: cdn
+    url: https://unpkg.com/@stoplight/elements/styles.min.css
+    pinned: false
+  - registry: npm
+    package: '@stoplight/elements'
+    version: 9.0.24
+    published: '2026-07-14'
+  - registry: npm
+    package: '@stoplight/elements-dev-portal'
+    version: 3.0.24
+    published: '2026-07-14'

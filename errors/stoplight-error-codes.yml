@@ -1,0 +1,127 @@
+generated: '2026-08-27'
+method: searched
+source: https://docs.stoplight.io/docs/prism/cfa6f7191e544-errors
+docs: https://docs.stoplight.io/docs/prism/cfa6f7191e544-errors
+provider: Stoplight
+providerId: stoplight
+product: Prism
+description: >-
+  The published Prism error registry. Prism is the mock/proxy server behind every
+  hosted Stoplight mock server, so these are the errors an API consumer hitting a
+  Stoplight mock actually receives. Harvested verbatim from Stoplight's own docs.
+format: rfc7807
+envelope:
+  media_type: application/json
+  specification: RFC 7807 (Problem Details for HTTP APIs)
+  fields:
+    - name: type
+      type: string
+    - name: title
+      type: string
+    - name: status
+      type: number
+    - name: detail
+      type: string
+  note: >-
+    Stoplight documents RFC 7807, the predecessor of RFC 9457. The registry predates
+    the 9457 rename and has not been updated to it.
+classes:
+  - id: routing
+    name: Routing Errors
+    description: Returned while Prism resolves which described resource should answer the request.
+  - id: validation
+    name: Validation Errors
+    description: Returned while Prism validates the request/response against the OpenAPI document.
+  - id: security
+    name: Security Errors
+    description: Returned when the request does not satisfy the described security scheme.
+  - id: negotiation
+    name: Negotiation Errors
+    description: Returned when Prism cannot produce a response representation for the request.
+error_codes:
+  - code: NO_BASE_URL_ERROR
+    class: routing
+    status: 400
+    message: >-
+      Attempted to make a request to a server but neither baseUrl param were provided
+      nor servers were defined in the spec
+    action: Define a servers[] entry in the document, or pass a base URL to the proxy.
+  - code: NO_RESOURCE_PROVIDED_ERROR
+    class: routing
+    status: 404
+    message: Route not resolved, no resource provided
+    action: The document has no paths. Add at least one operation.
+  - code: NO_PATH_MATCHED_ERROR
+    class: routing
+    status: 404
+    message: Route not resolved, no path matched
+    action: No described path matches the requested URL. Check the path template.
+  - code: NO_SERVER_MATCHED_ERROR
+    class: routing
+    status: 404
+    message: Route not resolved, no server matched
+    action: Server validation is on and the requested server is not in servers[].
+  - code: NO_METHOD_MATCHED_ERROR
+    class: routing
+    status: 405
+    message: Route resolved, but no path matched
+    action: The path exists but the HTTP verb is not described on it.
+  - code: NO_SERVER_CONFIGURATION_PROVIDED_ERROR
+    class: routing
+    status: 404
+    message: Route not resolved, no server configuration provided
+    action: A base URL was supplied but the document declares no servers[] entry.
+  - code: UNPROCESSABLE_ENTITY
+    class: validation
+    status: 422
+    message: Invalid request
+    action: The request body/params violate the described schema. See the violations list.
+  - code: NOT_ACCEPTABLE
+    class: validation
+    status: 406
+    message: The server can't produce a representation for your accept header
+    action: Send an Accept header matching a described response media type.
+  - code: NOT_FOUND
+    class: validation
+    status: 404
+    message: The server can't find the requested content
+    action: The requested example or response variant is not described.
+  - code: UNAUTHORIZED
+    class: security
+    status: 401
+    message: Invalid security scheme used
+    action: Send credentials matching the operation's declared securityScheme.
+  - code: NO_COMPLEX_OBJECT_TEXT
+    class: negotiation
+    status: 500
+    message: Can't serialise complex objects as text
+    action: The response media type is text/* but the schema is an object or array.
+  - code: NO_RESPONSE_DEFINED
+    class: negotiation
+    status: 500
+    message: No response defined for the selected operation
+    action: Add at least one response to the operation in the document.
+  - code: INVALID_CONTENT_TYPE
+    class: negotiation
+    status: 415
+    message: 'Supported content types: _list_'
+    action: Send a Content-Type the operation describes.
+  - code: SCHEMA_TOO_COMPLEX
+    class: negotiation
+    status: 500
+    message: >-
+      Unable to generate [body|header] for response. The schema is too complex to
+      generate.
+    action: Simplify the schema or supply an explicit example.
+coverage:
+  error_code_count: 14
+  classes: 4
+  additional_sections:
+    - VIOLATIONS (validation detail array, documented without a code)
+    - Unknown Error (catch-all, documented without a code)
+related:
+  - product: Spectral
+    docs: https://docs.stoplight.io/docs/spectral/f8921361d3f05-error-handling
+    note: >-
+      Spectral publishes a bail-vs-diagnostic error-handling contract rather than a
+      numbered code registry, so it is referenced here instead of enumerated.

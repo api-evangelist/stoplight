@@ -4,118 +4,48 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Stoplight
 providerId: stoplight
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-22'
+modified: '2026-08-27'
+generated: '2026-08-27'
+method: searched
+source: >-
+  https://docs.stoplight.io (full table-of-contents walk of the platform, prism,
+  spectral and elements projects), https://stoplight.io/pricing,
+  https://docs.stoplight.io/docs/platform/3aaeb73f741fc-faq
 tags:
   - API Design
   - API Documentation
   - API Governance
-  - AsyncAPI
-  - Design-First
-  - Linting
-  - Mock Servers
   - OpenAPI
-  - Style Guides
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Stoplight API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Stoplight Platform
-      - Stoplight Prism
-      - Stoplight Spectral
-      - Stoplight Elements
-      - Stoplight Studio
-      - Stoplight CLI
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Stoplight Platform
-      - Stoplight Prism
-      - Stoplight Spectral
-      - Stoplight Elements
-      - Stoplight Studio
-      - Stoplight CLI
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Stoplight Platform
-      - Stoplight Prism
-      - Stoplight Spectral
-      - Stoplight Elements
-      - Stoplight Studio
-      - Stoplight CLI
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Stoplight Platform
-      - Stoplight Prism
-      - Stoplight Spectral
-      - Stoplight Elements
-      - Stoplight Studio
-      - Stoplight CLI
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Stoplight Platform
-      - Stoplight Prism
-      - Stoplight Spectral
-      - Stoplight Elements
-      - Stoplight Studio
-      - Stoplight CLI
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+description: >-
+  Rate limits for Stoplight, searched 2026-08-27. Stoplight publishes NONE. This file
+  replaces the 2026-05-04 bulk-sweep scaffold, which asserted per-tier quotas,
+  X-RateLimit-* headers and 429 semantics that Stoplight has never documented — those
+  invented values are removed rather than carried forward.
+limit_count: 0
+documented: false
+headers: {}
+response_codes: {}
+limits: []
+searched:
+  - surface: docs.stoplight.io platform project (all 100+ articles enumerated via the table-of-contents API)
+    result: no rate limit, quota, throttling or 429 reference
+  - surface: docs.stoplight.io FAQ and Troubleshooting
+    result: no occurrence of "rate limit", "quota", "throttl" or "429"
+  - surface: https://stoplight.io/pricing and the full plan-comparison table
+    result: seat-based limits only; no request quota, no overage, no throughput cap
+  - surface: openapi/stoplight-platform-v1-openapi.yml
+    result: no 429 response on any of the five operations; no rate-limit headers described
+  - surface: https://docs.stoplight.io/docs/prism/cfa6f7191e544-errors
+    result: 14 documented Prism error codes, none of them a rate-limit or throttling error
+note: >-
+  An honest zero. Stoplight's commercial model is per-seat, not per-call, so there is
+  no metered API surface for a limit to apply to. The one place a consumer might meet
+  throttling is the hosted mock servers, where Stoplight's guidance is qualitative
+  rather than numeric: it recommends running a standalone Prism proxy for CI/CD
+  integrations "that result in a large number of API calls"
+  (https://docs.stoplight.io/docs/platform/336b74db38c50-work-with-mock-servers).
+  No number, window or header is attached to that advice.
+agent_impact: >-
+  An agent calling any Stoplight surface has no runtime signal to back off on — no
+  X-RateLimit-*, no RateLimit-*, no Retry-After, and no documented exhaustion status.

@@ -1,0 +1,146 @@
+generated: '2026-08-27'
+method: searched
+source: >-
+  registry.npmjs.org metadata endpoints, docs.stoplight.io node API, and the
+  stoplightio GitHub org repo listing (gh api /orgs/stoplightio/repos)
+provider: Stoplight
+providerId: stoplight
+description: >-
+  First-party Stoplight client libraries, CLIs and embeddable component packages.
+  Every version/published pair below was read from registry.npmjs.org on 2026-08-27.
+  Stoplight publishes exclusively to npm — no PyPI, Maven Central, NuGet, RubyGems,
+  Packagist, crates.io or Go module distribution was found for any Stoplight product.
+registries_checked:
+  - registry: npm
+    result: 11 first-party packages under the @stoplight scope
+  - registry: pypi
+    result: no first-party Stoplight package
+  - registry: rubygems
+    result: no first-party Stoplight package
+  - registry: crates.io
+    result: no first-party Stoplight package
+  - registry: nuget
+    result: no first-party Stoplight package
+  - registry: maven-central
+    result: no first-party Stoplight package
+  - registry: pkg.go.dev
+    result: no first-party Stoplight module
+packages:
+  - language: javascript
+    registry: npm
+    name: '@stoplight/prism-cli'
+    url: https://www.npmjs.com/package/@stoplight/prism-cli
+    install: npm install -g @stoplight/prism-cli
+    official: true
+    product: Prism
+    version: 5.16.0
+    published: '2026-07-17'
+    note: The Prism mock/proxy server CLI. Actively released.
+  - language: javascript
+    registry: npm
+    name: '@stoplight/prism-http'
+    url: https://www.npmjs.com/package/@stoplight/prism-http
+    install: npm install @stoplight/prism-http
+    official: true
+    product: Prism
+    version: 5.16.0
+    published: '2026-07-17'
+  - language: javascript
+    registry: npm
+    name: '@stoplight/spectral-cli'
+    url: https://www.npmjs.com/package/@stoplight/spectral-cli
+    install: npm install -g @stoplight/spectral-cli
+    official: true
+    product: Spectral
+    version: 6.16.3
+    published: '2026-08-03'
+    note: The Spectral JSON/YAML/OpenAPI/Arazzo/AsyncAPI linter CLI.
+  - language: javascript
+    registry: npm
+    name: '@stoplight/spectral-core'
+    url: https://www.npmjs.com/package/@stoplight/spectral-core
+    install: npm install @stoplight/spectral-core
+    official: true
+    product: Spectral
+    version: 1.23.1
+    published: '2026-06-30'
+  - language: javascript
+    registry: npm
+    name: '@stoplight/spectral-rulesets'
+    url: https://www.npmjs.com/package/@stoplight/spectral-rulesets
+    install: npm install @stoplight/spectral-rulesets
+    official: true
+    product: Spectral
+    version: 1.22.7
+    published: '2026-08-03'
+  - language: javascript
+    registry: npm
+    name: '@stoplight/spectral-owasp-ruleset'
+    url: https://www.npmjs.com/package/@stoplight/spectral-owasp-ruleset
+    install: npm install @stoplight/spectral-owasp-ruleset
+    official: true
+    product: Spectral
+    version: 2.0.1
+    published: '2024-03-12'
+    note: >-
+      OWASP API Security Top 10 ruleset. Last published 2024-03-12 — more than two
+      years behind the Spectral core it extends (1.23.1, 2026-06-30).
+  - language: javascript
+    registry: npm
+    name: '@stoplight/spectral-documentation'
+    url: https://www.npmjs.com/package/@stoplight/spectral-documentation
+    install: npm install @stoplight/spectral-documentation
+    official: true
+    product: Spectral
+    version: 1.3.1
+    published: '2023-04-06'
+    note: >-
+      Documentation-quality ruleset. Last published 2023-04-06 — the oldest
+      first-party Stoplight package still on npm.
+  - language: javascript
+    registry: npm
+    name: '@stoplight/elements'
+    url: https://www.npmjs.com/package/@stoplight/elements
+    install: npm install @stoplight/elements
+    official: true
+    product: Elements
+    version: 9.0.24
+    published: '2026-07-14'
+    note: React + Web Component API reference documentation library.
+  - language: javascript
+    registry: npm
+    name: '@stoplight/elements-dev-portal'
+    url: https://www.npmjs.com/package/@stoplight/elements-dev-portal
+    install: npm install @stoplight/elements-dev-portal
+    official: true
+    product: Elements Dev Portal
+    version: 3.0.24
+    published: '2026-07-14'
+  - language: javascript
+    registry: npm
+    name: '@stoplight/cli'
+    url: https://www.npmjs.com/package/@stoplight/cli
+    install: npm install -g @stoplight/cli
+    official: true
+    product: Stoplight Platform
+    version: 6.0.2407
+    published: '2025-11-20'
+    note: >-
+      The Stoplight Platform publishing CLI. Last published 2025-11-20 — the only
+      SaaS-platform package Stoplight ships, and the slowest-moving of the actively
+      maintained set.
+  - language: javascript
+    registry: cdn
+    name: '@stoplight/elements (unpkg build)'
+    url: https://unpkg.com/@stoplight/elements/web-components.min.js
+    install: '<script src="https://unpkg.com/@stoplight/elements/web-components.min.js"></script>'
+    official: true
+    product: Elements
+    version: null
+    published: null
+    note: >-
+      The loader URL Stoplight publishes in its own "Elements in HTML" guide is
+      UNPINNED — it floats to whatever npm dist-tag `latest` resolves to (9.0.24 as
+      of 2026-08-27, per data.jsdelivr.com/v1/packages/npm/@stoplight/elements).
+      A consumer copying the documented snippet cannot tell which build they get,
+      so there is no version to record.

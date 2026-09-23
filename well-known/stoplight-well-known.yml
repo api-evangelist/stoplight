@@ -1,0 +1,72 @@
+generated: '2026-08-27'
+method: probed
+source: live HTTPS GETs against every host named in apis.yml and in openapi/ servers[]
+description: >-
+  /.well-known/ discovery probe for the Stoplight hosts. Every path on every host
+  returned 404. Nothing was saved, so no WellKnown or SecurityTxt pointer is wired
+  into apis.yml — this file records a measured absence, not a served surface.
+hit_count: 0
+hosts:
+  - host: https://stoplight.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+    note: >-
+      stoplight.io answers every /.well-known/* path with an explicit
+      404 and the body "Invalid .well-known request" — a deliberate handler,
+      not an SPA catch-all, so these are true negatives.
+  - host: https://api.stoplight.io
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+    note: >-
+      api.stoplight.io returns the platform's own JSON error envelope
+      {"message":"Not found","code":404,"type":"NOT_FOUND"} for these paths.
+  - host: https://docs.stoplight.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+    note: >-
+      docs.stoplight.io returns HTTP 404 with the Stoplight docs SPA shell.
+      Correct status code, HTML body — recorded as a miss either way.
+  - host: https://smartbear.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+    note: >-
+      Parent company host, probed because Stoplight's security and trust
+      surfaces are published under SmartBear. Also a miss.

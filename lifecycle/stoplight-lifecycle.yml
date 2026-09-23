@@ -1,0 +1,110 @@
+generated: '2026-08-27'
+method: searched
+source: >-
+  https://stoplight.status.smartbear.com/,
+  https://docs.stoplight.io/docs/platform/fe73ea4369632-migrating-from-v1,
+  https://docs.stoplight.io/docs/platform/7f14ca45d9d47-migrating-from-stoplight-classic,
+  https://github.com/stoplightio (releases), and probes of api.stoplight.io/v1
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Lifecycle posture for Stoplight, now a SmartBear API Hub product. The open-source
+  projects (Prism, Spectral, Elements) run a semver + GitHub Releases lifecycle; the
+  SaaS platform runs a rolling release with no published version or deprecation policy.
+versioning:
+  api:
+    scheme: path
+    current: v1
+    example: https://api.stoplight.io/v1
+    policy_published: false
+    note: >-
+      The only Stoplight API version ever given a public machine-readable contract is
+      v1 (Stoplight Classic). Stoplight publishes no versioning policy for it.
+  platform:
+    scheme: rolling
+    build_marker: '2023.08.0-stable.11559.git-fb179d5'
+    note: >-
+      The SaaS build string observed in the docs application on 2026-08-27. Stoplight
+      does not surface a customer-facing platform version or release channel.
+  open_source:
+    scheme: semver
+    products:
+      - name: Prism
+        current: 5.16.0
+        released: '2026-07-17'
+        releases: https://github.com/stoplightio/prism/releases
+      - name: Spectral
+        current: 6.16.3
+        released: '2026-08-03'
+        releases: https://github.com/stoplightio/spectral/releases
+      - name: Elements
+        current: 9.0.24
+        released: '2026-07-14'
+        releases: https://github.com/stoplightio/elements/releases
+        note: >-
+          npm is current at 9.0.24 but the GitHub Releases feed for elements stops at
+          v6.1.10 (2021-02-09) — the release notes and the published package have
+          diverged by three major versions.
+      - name: Stoplight CLI
+        current: 6.0.2407
+        released: '2025-11-20'
+deprecation:
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  note: >-
+    No RFC 8594 Sunset/Deprecation header support is documented and no deprecation
+    policy page exists. Stoplight does publish MIGRATION guides for the generations it
+    has already retired, which is the closest thing to a deprecation record it ships.
+  migrations_published:
+    - from: Stoplight Classic
+      docs: https://docs.stoplight.io/docs/platform/7f14ca45d9d47-migrating-from-stoplight-classic
+    - from: Stoplight NEXT
+      docs: https://docs.stoplight.io/docs/platform/a97b60f6150d0-migrating-from-next
+    - from: V1
+      docs: https://docs.stoplight.io/docs/platform/fe73ea4369632-migrating-from-v1
+  retired_surfaces:
+    - surface: Stoplight v1 (Classic) Platform API
+      evidence: >-
+        The x-origin export URL Stoplight itself published for the v1 contract
+        (https://api.stoplight.io/v1/versions/wDcMCTKXwn8X4ynL9/export/oas.json)
+        returned HTTP 404 on 2026-08-27. api.stoplight.io still answers with the
+        platform JSON error envelope, so the host is live and the resource is gone.
+      probed: '2026-08-27'
+    - surface: Stoplight Studio product page (stoplight.io/studio)
+      evidence: 302 redirect to https://stoplight.io/solutions, probed 2026-08-27.
+      probed: '2026-08-27'
+    - surface: smartbear.com/product/stoplight/
+      evidence: HTTP 404, probed 2026-08-27. Was wired as the ParentCompany pointer.
+      probed: '2026-08-27'
+    - surface: An Update on Spectral from SmartBear
+      evidence: https://blog.stoplight.io/an-update-on-spectral-from-smartbear (2026-08-14)
+      probed: '2026-08-27'
+deprecated_operations:
+  count: 0
+  note: >-
+    No operation in openapi/stoplight-platform-v1-openapi.yml is marked deprecated.
+status_page:
+  url: https://stoplight.status.smartbear.com/
+  status: 200
+  probed: '2026-08-27'
+  provider: SmartBear (Statuspage)
+  note: >-
+    The former status.stoplight.io now resolves to the SmartBear-hosted Stoplight
+    status page, confirming the operational consolidation under the parent.
+sla:
+  published: false
+  note: >-
+    No public SLA. The Enterprise plan advertises "Priority support" on
+    https://stoplight.io/pricing without stating an availability or response target.
+support:
+  channels:
+    - type: HelpCenter
+      url: https://support.stoplight.io/
+    - type: Community
+      url: https://community.smartbear.com/category/stoplight/discussions/stoplight
+      note: community.stoplight.io 301s here.
+    - type: Email
+      url: mailto:sales@stoplight.io
+      note: Enterprise plan contact, documented on the Billing page.

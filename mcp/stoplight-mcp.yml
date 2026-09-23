@@ -1,0 +1,63 @@
+generated: '2026-08-27'
+method: derived
+status: candidate
+source: openapi/stoplight-platform-v1-openapi.yml
+description: >-
+  Stoplight ships NO Model Context Protocol server of its own. This file records a
+  DERIVED candidate tool set computed from the five operations in the Stoplight v1
+  Platform OpenAPI, plus the measured state of the parent company's MCP program.
+  No MCPServer pointer is wired into apis.yml, because nothing here is a surface an
+  agent can reach today.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: derived
+parent_company_mcp:
+  vendor: SmartBear
+  package: '@smartbear/mcp'
+  package_url: https://www.npmjs.com/package/@smartbear/mcp
+  repository: https://github.com/SmartBear/smartbear-mcp
+  docs: https://developer.smartbear.com/smartbear-mcp/docs/mcp-server
+  version: 0.38.0
+  published: '2026-08-27'
+  remote_endpoints:
+    - product: Swagger (API Hub)
+      url: https://swagger.mcp.smartbear.com/mcp
+    - product: BugSnag
+      url: https://bugsnag.mcp.smartbear.com/mcp
+    - product: Zephyr
+      url: https://zephyr.mcp.smartbear.com/mcp
+  local_install: npx -y @smartbear/mcp@latest
+  covers_stoplight: false
+  note: >-
+    SmartBear acquired Stoplight in 2023 and publishes an official MCP server, but
+    its documented product coverage is BearQ, BugSnag, Reflect, Swagger (Portal,
+    Studio, Contract Testing, Functional Testing), QMetry, QTM4J, Zephyr and
+    Collaborator. The string "Stoplight" does not appear anywhere in the package
+    README or the supported-tools list, and none of the three hosted remote
+    endpoints is a Stoplight endpoint. Recorded here as context, NOT as a Stoplight
+    agent surface — crediting Stoplight with it would assert an MCP posture the
+    product does not have.
+tools:
+  - name: export_version
+    description: Export a Stoplight version to OAS 2/3, RAML 0.8/1.0 or Stoplight JSON/YAML.
+    source_operation: openapi/stoplight-platform-v1-openapi.yml#GET_versions-versionId-export-format
+  - name: import_version
+    description: Import an API description into an existing Stoplight version.
+    source_operation: openapi/stoplight-platform-v1-openapi.yml#PUT_versions-versionId-import
+  - name: publish_version
+    description: Publish a Stoplight version to hosted documentation.
+    source_operation: openapi/stoplight-platform-v1-openapi.yml#POST_versions-versionId-publish
+  - name: unpublish_version
+    description: Unpublish a previously published Stoplight version.
+    source_operation: openapi/stoplight-platform-v1-openapi.yml#PUT_versions-versionId-unpublish
+  - name: publish_anonymous
+    description: Anonymously publish an OpenAPI/Swagger/RAML description to hosted docs.
+    source_operation: openapi/stoplight-platform-v1-openapi.yml#POST_versions-publish-anon
+caveat: >-
+  The backing contract is the LEGACY Stoplight v1 (Classic) API. The x-origin export
+  URL Stoplight published for it now returns 404, so these candidate tools describe
+  operations whose liveness could not be confirmed. Do not treat them as callable.

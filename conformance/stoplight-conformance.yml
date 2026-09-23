@@ -1,0 +1,129 @@
+generated: '2026-08-27'
+method: searched
+source: >-
+  openapi/stoplight-platform-v1-openapi.yml, https://docs.stoplight.io/docs/spectral,
+  https://docs.stoplight.io/docs/prism/cfa6f7191e544-errors, https://smartbear.com/security/
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Standards conformance for Stoplight. Two things are being measured and they are
+  deliberately kept apart: what Stoplight's OWN API conforms to (thin), and what
+  Stoplight's PRODUCTS implement as a matter of function (deep — this is a
+  specification-tooling company, and its domain standard IS the API description
+  specification family).
+standards:
+  - id: openapi-3.1
+    conforms: true
+    role: implements
+    evidence: >-
+      Spectral ships built-in OpenAPI v3.1 support and rules
+      (https://docs.stoplight.io/docs/spectral/d373afba57903-open-api-support);
+      the Stoplight design editor authors 3.1.
+  - id: openapi-3.0
+    conforms: true
+    role: implements-and-publishes
+    evidence: >-
+      Implemented across Prism/Spectral/Elements, and openapi/stoplight-platform-v1-openapi.yml
+      declares openapi 3.0.0 for Stoplight's own v1 API.
+  - id: openapi-2.0
+    conforms: true
+    role: implements
+    evidence: Spectral and Prism both accept Swagger 2.0 documents.
+  - id: arazzo-1.0
+    conforms: true
+    role: implements
+    evidence: https://docs.stoplight.io/docs/spectral/5989197c7a8b1-arazzo-support
+  - id: asyncapi-2.x
+    conforms: true
+    role: implements
+    evidence: https://docs.stoplight.io/docs/spectral/d08337d937a3d-async-api-support
+  - id: json-schema
+    conforms: true
+    role: implements
+    evidence: >-
+      JSON Schema editor and viewer are core Stoplight surfaces
+      (https://docs.stoplight.io/docs/platform/zumkfdc16oypw-json-schema-editor);
+      json-schema/stoplight-spectral-ruleset-schema.json in this repo.
+  - id: rfc7807-problem-details
+    conforms: true
+    role: implements
+    evidence: >-
+      Prism returns RFC 7807 problem objects for every error
+      (https://docs.stoplight.io/docs/prism/cfa6f7191e544-errors). See
+      errors/stoplight-error-codes.yml.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Stoplight documents RFC 7807, the superseded predecessor. No
+      application/problem+json media type appears in its own v1 contract.
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No oauth2 securityScheme in the published contract and no OAuth flow documented
+      for API access. See authentication/stoplight-authentication.yml.
+  - id: oidc
+    conforms: false
+    evidence: >-
+      No /.well-known/openid-configuration on any host (404 on all three probed).
+      SAML — not OIDC — is the documented workspace SSO protocol.
+  - id: saml-2.0
+    conforms: true
+    role: implements
+    evidence: >-
+      Workspace SSO with published setup guides for Azure, Google, Okta, OneLogin,
+      Ping, Keycloak and CyberArk
+      (https://docs.stoplight.io/docs/platform/692808d0afabb-single-sign-on).
+  - id: scim
+    conforms: false
+    evidence: No SCIM provisioning surface documented; member management is UI/LDAP only.
+  - id: owasp-api-security-top-10
+    conforms: true
+    role: publishes-ruleset
+    evidence: >-
+      Stoplight publishes @stoplight/spectral-owasp-ruleset — a Spectral ruleset
+      encoding the OWASP API Security Top 10
+      (https://github.com/stoplightio/spectral-owasp-ruleset).
+  - id: soc2
+    conforms: true
+    role: parent-company-program
+    evidence: SOC 2 named on https://smartbear.com/security/ (SmartBear estate).
+  - id: iso-27001
+    conforms: true
+    role: parent-company-program
+    evidence: ISO/IEC 27001 named on https://smartbear.com/security/ (SmartBear estate).
+  - id: nist-csf
+    conforms: true
+    role: parent-company-program
+    evidence: NIST CSF alignment named on https://smartbear.com/security/.
+  - id: gdpr
+    conforms: true
+    role: parent-company-program
+    evidence: https://smartbear.com/security/ and https://stoplight.io/privacy
+  - id: rfc8594-sunset
+    conforms: false
+    evidence: No Sunset/Deprecation header support documented. See lifecycle/.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: 404 on every /.well-known/security.txt probed 2026-08-27.
+  - id: idempotency
+    conforms: false
+    evidence: >-
+      No idempotency key, header or retry-safety contract is documented for any
+      Stoplight write surface. See conventions/stoplight-conventions.yml.
+domain_standard:
+  market: API description / API governance tooling
+  standard_family: OpenAPI Initiative specification family (OpenAPI, Arazzo, Overlay) + AsyncAPI + JSON Schema
+  declared: true
+  evidence: >-
+    This is the rare case where the domain standard is not something the provider
+    merely conforms to but the thing it builds on. Spectral declares built-in format
+    support for OpenAPI v3.1/v3.0/v2.0, Arazzo v1.0 and AsyncAPI v2.x in its own
+    documentation and in its npm package description; Prism consumes OpenAPI 2/3 and
+    Postman Collections; Elements renders OpenAPI. Stoplight's own v1 contract
+    declares openapi: 3.0.0 with servers[] https://api.stoplight.io/v1.
+  spec_location: >-
+    openapi/stoplight-platform-v1-openapi.yml (openapi: 3.0.0) and
+    https://docs.stoplight.io/docs/spectral/d373afba57903-open-api-support
+  note: >-
+    Reward-only dimension. Recorded because the contract and the product docs BOTH
+    declare the standard, not because the marketing site claims alignment.

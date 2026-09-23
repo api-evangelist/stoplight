@@ -1,0 +1,81 @@
+generated: '2026-08-27'
+method: searched
+source: >-
+  https://docs.stoplight.io/docs/platform/336b74db38c50-work-with-mock-servers,
+  https://docs.stoplight.io/docs/prism/beeaad4dc0227-prism-cli,
+  https://docs.stoplight.io/docs/getting-started/elements/a71d7fcfefcd6-elements-in-html
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Stoplight publishes no test/sandbox environment for its OWN API — there is no test
+  key prefix, no test mode, no fixture set. What it does publish, and what this file
+  records, is a sandbox PRODUCT: hosted Prism mock servers for every API in a
+  workspace, plus a public live demo of the Elements documentation component.
+own_api_sandbox:
+  available: false
+  test_key_prefix: null
+  test_mode: null
+  note: >-
+    api.stoplight.io has no documented test environment and the v1 contract declares a
+    single production server.
+hosted_mock_servers:
+  available: true
+  docs: https://docs.stoplight.io/docs/platform/336b74db38c50-work-with-mock-servers
+  engine: Prism (https://stoplight.io/open-source/prism)
+  scope: every API published in a Stoplight workspace
+  url_form: https://stoplight.io/mocks/{workspace}/{project}/{serviceId}
+  response_modes:
+    - id: static
+      description: >-
+        Responses built from examples in the OpenAPI schema object where present,
+        otherwise faked from the other schema properties.
+      docs: https://docs.stoplight.io/docs/prism/83dbbd75532cf-http-mocking#static-response-generation
+    - id: dynamic
+      description: Responses generated per-request with JSON Schema Faker.
+      docs: https://docs.stoplight.io/docs/prism/9528b5a8272c0-dynamic-response-generation-with-faker
+      limitation: >-
+        JSON Schema Faker default configuration options cannot be changed on hosted
+        mock servers (documented limitation).
+  request_validation: https://docs.stoplight.io/docs/prism/21adcc8dc5fe5-request-validation
+  errors: errors/stoplight-error-codes.yml
+  caveat: >-
+    Stoplight documents that hosted mocks are for convenience and recommends a
+    standalone Prism proxy for CI/CD workloads that generate a large call volume.
+response_control:
+  mechanism: Prefer header, or a query parameter prefixed with a double underscore
+  docs: https://docs.stoplight.io/docs/prism/beeaad4dc0227-prism-cli
+  controls:
+    - name: code
+      header: 'Prefer: code=404'
+      query: __code=404
+      description: Force a specific HTTP status from the described responses.
+    - name: example
+      header: 'Prefer: example=exampleKey'
+      query: __example=exampleKey
+      description: Request a named example from the document.
+    - name: dynamic
+      header: 'Prefer: dynamic=false'
+      query: __dynamic=false
+      description: Override static vs dynamic response generation per request.
+    - name: server
+      query: __server=https://...
+      description: Select which servers[] entry to validate the request against.
+  note: >-
+    These are the real "test fixtures" of the Stoplight sandbox: there are no test
+    cards or magic identifiers, because the fixtures come from the API description
+    under test, not from Stoplight.
+local_sandbox:
+  install: npm install -g @stoplight/prism-cli
+  command: prism mock <openapi-document-url-or-path>
+  default_bind: http://127.0.0.1:4010
+  proxy_command: prism proxy
+  auto_reload: true
+  docs: https://docs.stoplight.io/docs/prism/beeaad4dc0227-prism-cli
+public_demo:
+  url: https://elements-demo.stoplight.io/
+  status: 200
+  probed: '2026-08-27'
+  note: >-
+    Live Elements demo referenced from Stoplight's own "Elements in HTML" guide.
+    Served as a client-rendered shell (630 bytes of HTML), so it is a browser demo,
+    not a machine-callable surface.

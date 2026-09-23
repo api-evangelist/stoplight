@@ -1,0 +1,113 @@
+generated: '2026-08-27'
+method: searched
+source: >-
+  https://docs.stoplight.io/docs/platform/f76c84240244f-publish-with-the-stoplight-cli,
+  https://docs.stoplight.io/docs/spectral/9ffa04e052cc1-spectral-cli,
+  https://docs.stoplight.io/docs/prism/beeaad4dc0227-prism-cli
+provider: Stoplight
+providerId: stoplight
+description: >-
+  Stoplight ships three distinct first-party command-line tools. They are separate
+  binaries with separate release trains — the platform CLI publishes projects, the
+  Spectral CLI lints descriptions, and the Prism CLI runs mock/proxy servers.
+clis:
+  - id: stoplight-cli
+    name: Stoplight CLI
+    binary: stoplight
+    package: '@stoplight/cli'
+    version: 6.0.2407
+    published: '2025-11-20'
+    install:
+      - npm install -g @stoplight/cli
+      - npx @stoplight/cli@5 push
+    prerequisites: Node.js 12 or greater
+    docs: https://docs.stoplight.io/docs/platform/f76c84240244f-publish-with-the-stoplight-cli
+    purpose: >-
+      Publish local (non-Git) project content — OpenAPI files, JSON Schemas, Markdown
+      docs and images — into a Stoplight workspace so it appears in Explorer.
+    commands:
+      - name: push
+        synopsis: >-
+          npx @stoplight/cli@5 push --ci-token {project-token} --url https://{workspace-name}.stoplight.io
+        flags:
+          - name: --ci-token
+            description: Per-project CI token from {workspace}.stoplight.io/settings/{project}/automation
+          - name: --url
+            description: The workspace URL to publish into
+        description: >-
+          Pushes all API design and documentation files from the current directory,
+          ignoring unrelated files.
+    ci_integration:
+      github_workflow: https://github.com/stoplightio/stoplight-cli-workflow
+      note: Documented for GitHub Actions, CircleCI, Jenkins and other CI servers.
+  - id: spectral-cli
+    name: Spectral CLI
+    binary: spectral
+    package: '@stoplight/spectral-cli'
+    version: 6.16.3
+    published: '2026-08-03'
+    install:
+      - npm install -g @stoplight/spectral-cli
+    docs: https://docs.stoplight.io/docs/spectral/9ffa04e052cc1-spectral-cli
+    docker: https://hub.docker.com/r/stoplight/spectral
+    github_action: https://github.com/stoplightio/spectral-action
+    vscode_extension: https://github.com/stoplightio/vscode-spectral
+    purpose: Lint JSON/YAML API descriptions against a ruleset.
+    commands:
+      - name: lint
+        synopsis: spectral lint <file...> [--ruleset myruleset.json]
+        description: >-
+          Lints one or more documents; accepts multiple file arguments, remote URLs
+          and glob patterns.
+        flags:
+          - name: -r, --ruleset
+            description: Path or URL to a ruleset file
+          - name: -f, --format
+            description: >-
+              Output formatter — json, stylish, junit, html, text, teamcity, pretty,
+              github-actions, sarif, markdown, gitlab (default stylish); repeatable
+          - name: -o, --output
+            description: Write results to a file, or multiple "output.<format>" targets
+          - name: -F, --fail-severity
+            description: error | warn | info | hint (default error)
+          - name: -D, --display-only-failures
+            description: Only output results at or above --fail-severity
+          - name: -e, --encoding
+            description: 'Text encoding (default utf8)'
+          - name: --stdin-filepath
+            description: Path to pretend stdin came from
+          - name: --resolver
+            description: Path to a custom json-ref-resolver instance
+          - name: --ignore-unknown-format
+            description: Do not warn about unmatched formats
+          - name: --fail-on-unmatched-globs
+            description: Fail on unmatched glob patterns
+          - name: --show-documentation-url
+            description: Show the documentation URL in each result
+          - name: -v, --verbose
+            description: Increase verbosity
+          - name: -q, --quiet
+            description: Output only, no logging
+  - id: prism-cli
+    name: Prism CLI
+    binary: prism
+    package: '@stoplight/prism-cli'
+    version: 5.16.0
+    published: '2026-07-17'
+    install:
+      - npm install -g @stoplight/prism-cli
+    docs: https://docs.stoplight.io/docs/prism/beeaad4dc0227-prism-cli
+    purpose: Turn an OpenAPI 2/3 or Postman Collection document into a mock or validation proxy.
+    commands:
+      - name: mock
+        synopsis: prism mock <document>
+        description: >-
+          Starts a mock HTTP server (default http://127.0.0.1:4010) that serves every
+          described operation, hot-reloading when the document changes.
+        flags:
+          - name: -d, --dynamic
+            description: Generate dynamic rather than static example responses
+      - name: proxy
+        synopsis: prism proxy <document> <upstream>
+        description: Validation proxy — forwards to a real API and validates both directions.
+        docs: https://docs.stoplight.io/docs/prism/72d69fb629de0-validation-proxy

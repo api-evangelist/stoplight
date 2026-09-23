@@ -1,0 +1,64 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Stoplight v1 Platform API
+  version: 1.0.0
+extends: openapi/stoplight-platform-v1-openapi.yml
+x-generated: '2026-08-27'
+x-method: generated
+x-source: >-
+  Enhancements derived from this repo's artifacts. The harvested contract is never
+  mutated; every change API Evangelist would make is expressed here as an action.
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-slug: stoplight
+      x-apievangelist-provenance: >-
+        Harvested 2026-08-27 from the APIs.guru mirror of Stoplight's own export
+        (info.x-origin names https://api.stoplight.io/v1/versions/wDcMCTKXwn8X4ynL9/export/oas.json,
+        which now 404s). Ownership confirmed by servers[] https://api.stoplight.io/v1
+        and info.x-providerName stoplight.io.
+      x-apievangelist-lifecycle: >-
+        LEGACY. This describes Stoplight v1 (Classic). Stoplight publishes migration
+        guides away from V1 and ships no contract for the current platform API.
+      x-apievangelist-error-catalog: errors/stoplight-problem-types.yml
+      x-apievangelist-conventions: conventions/stoplight-conventions.yml
+  - target: $.info
+    update:
+      description: >-
+        The Stoplight v1 (Classic) Platform API. Five operations for exporting,
+        importing, publishing and unpublishing a version of an API description.
+        Authenticated with an Authorization header API key.
+      contact:
+        name: Stoplight Support
+        url: https://support.stoplight.io/
+  - target: $.servers[0]
+    update:
+      description: Stoplight v1 Platform API (legacy).
+  - target: $.paths['/versions/publish/anon'].post
+    update:
+      tags:
+        - Versions
+      x-apievangelist-irreversible: true
+      x-apievangelist-reversibility-note: >-
+        Stoplight states in the operation description that an anonymous publication
+        cannot be updated or removed. There is no reversal operation.
+  - target: $.paths['/versions/{versionId}/publish'].post
+    update:
+      x-apievangelist-reversal-operation: PUT_versions-versionId-unpublish
+      x-apievangelist-reversal-window: >-
+        Not stated by the provider. Recorded as unknown rather than assumed unbounded.
+  - target: $.paths['/versions/{versionId}/unpublish'].put
+    update:
+      x-apievangelist-reverses: POST_versions-versionId-publish
+  - target: $.components.schemas.standarderror
+    update:
+      x-apievangelist-note: >-
+        Referenced by every 4xx/5xx response but published with an empty body. The
+        error shape observed live on api.stoplight.io is {message, code, type} — see
+        errors/stoplight-problem-types.yml. Not added to the schema here, because
+        that would assert a contract Stoplight has not published.
+  - target: $.components.schemas['shared-user']
+    update:
+      x-apievangelist-note: >-
+        Orphan schema — not referenced by any operation, and it declares a property
+        whose key is the empty string.

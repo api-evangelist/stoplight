@@ -1,9 +1,10 @@
 openapi: 3.2.0
 info:
-  title: Stoplight Versions API
-  version: api-v1
   contact:
     x-twitter: stoplightio
+  description: ''
+  title: Stoplight Versions API
+  version: api-v1
   x-apisguru-categories:
   - developer_tools
   x-logo:
@@ -13,7 +14,6 @@ info:
     url: https://api.stoplight.io/v1/versions/wDcMCTKXwn8X4ynL9/export/oas.json
     version: '3.0'
   x-providerName: stoplight.io
-  description: 'Operations tagged Versions across 2 of this provider''s published API definitions: stoplight-openapi.json, stoplight-platform-v1-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://api.stoplight.io/v1
 tags:
@@ -21,7 +21,63 @@ tags:
 paths:
   /versions/publish/anon:
     post:
-      description: "Anonymously publish to API Docs.\n\nThis endpoint will take a JSON spec or a URL to a swagger or raml spec.\n\n```\n{\n  \"specData\": {...}\n}\n```\n\nor\n\n```\n{\n  \"url\": \"http://petstore.swagger.io/v2/swagger.json\"\n}\n```\n\nThe spec will be published to api-docs.io anonymously, which means you will not be able to update or remove this documentation.\n\nThe response will contain a url to the published documentation.\n\n```\n{\n  \"url\": \"https://swagger-petstore.api-docs.io/v1.0.0\"\n}\n```\n\n\nThe limitations of anonymous publishing\n* Cannot update/remove the documentation\n* Cannot choose the subdomain\n* Cannot choose the version\n* Cannot add theming"
+      description: 'Anonymously publish to API Docs.
+
+
+        This endpoint will take a JSON spec or a URL to a swagger or raml spec.
+
+
+        ```
+
+        {
+
+        "specData": {...}
+
+        }
+
+        ```
+
+
+        or
+
+
+        ```
+
+        {
+
+        "url": "http://petstore.swagger.io/v2/swagger.json"
+
+        }
+
+        ```
+
+
+        The spec will be published to api-docs.io anonymously, which means you will not be able to update or remove this documentation.
+
+
+        The response will contain a url to the published documentation.
+
+
+        ```
+
+        {
+
+        "url": "https://swagger-petstore.api-docs.io/v1.0.0"
+
+        }
+
+        ```
+
+
+        The limitations of anonymous publishing
+
+        * Cannot update/remove the documentation
+
+        * Cannot choose the subdomain
+
+        * Cannot choose the version
+
+        * Cannot add theming'
       operationId: POST_versions-publish-anon
       requestBody:
         content:
@@ -78,8 +134,6 @@ paths:
       summary: Publish Anonymous
       tags:
       - Versions
-    servers:
-    - url: https://api.stoplight.io/v1
   /versions/{versionId}/export/{format}:
     parameters:
     - description: This is the unique identifier for the version.
@@ -157,8 +211,6 @@ paths:
       summary: Export
       tags:
       - Versions
-    servers:
-    - url: https://api.stoplight.io/v1
   /versions/{versionId}/import:
     parameters:
     - description: This is the unique identifier for the version.
@@ -168,7 +220,70 @@ paths:
       schema:
         type: string
     put:
-      description: "Import the given specification into an existing version. \n\n**Warning, this is a destructive action! Any resources present in both the existing version, and the specification being imported, will be overwritten.**\n\nThis endpoint is particularly useful when you manage a specification file (Swagger or RAML) outside of Stoplight, and want to keep your Stoplight API version up to date as that specification changes.\n\nBy default, a \"merge\" is performed when importing. If a resource exists in the specification that you are importing, and in the Stoplight API, the resource will be overwritten. If a resource exists in the Stoplight API, but not in the spefication that you are importing, the resource will be left alone (and not deleted).\n\nYou can include an optional `options` property in the request body, to indicate if you would like to perform more of a replacement (instead of a merge). The options are documented in full in the response definition below these notes.\n\nTake this request + request body for example:\n\n`PUT https://api.stoplight.io/v1/versions/123/import`\n```json\n{\n  \"url\": \"http://petstore.swagger.io/v2/swagger.json\",\n  \"options\": {\n    \"removeExtraEndpoints\": true,\n    \"removeExtraSchemas\": true\n  }\n}\n```\n\nThis request will grab the swagger specification described at `http://petstore.swagger.io/v2/swagger.json`, and import it into the Stoplight API version with id `123`. Additionally, it will delete any existing endpoints or models that are not described in the petstore swagger being imported.\n\nInstead of a URL, you can provide the actual specification to be imported, either as a string (in the case of YAML) or an object (in the case of JSON). That request would look something like this:\n\n`PUT https://api.stoplight.io/v1/versions/123/import`\n```json\n{\n  \"specData\": {\n    \"swagger\": \"2.0\",\n    \"info\": {}\n    ... rest of spec\n  }\n}\n```"
+      description: 'Import the given specification into an existing version.
+
+
+        **Warning, this is a destructive action! Any resources present in both the existing version, and the specification being imported, will be overwritten.**
+
+
+        This endpoint is particularly useful when you manage a specification file (Swagger or RAML) outside of Stoplight, and want to keep your Stoplight API version up to date as that specification changes.
+
+
+        By default, a "merge" is performed when importing. If a resource exists in the specification that you are importing, and in the Stoplight API, the resource will be overwritten. If a resource exists in the Stoplight API, but not in the spefication that you are importing, the resource will be left alone (and not deleted).
+
+
+        You can include an optional `options` property in the request body, to indicate if you would like to perform more of a replacement (instead of a merge). The options are documented in full in the response definition below these notes.
+
+
+        Take this request + request body for example:
+
+
+        `PUT https://api.stoplight.io/v1/versions/123/import`
+
+        ```json
+
+        {
+
+        "url": "http://petstore.swagger.io/v2/swagger.json",
+
+        "options": {
+
+        "removeExtraEndpoints": true,
+
+        "removeExtraSchemas": true
+
+        }
+
+        }
+
+        ```
+
+
+        This request will grab the swagger specification described at `http://petstore.swagger.io/v2/swagger.json`, and import it into the Stoplight API version with id `123`. Additionally, it will delete any existing endpoints or models that are not described in the petstore swagger being imported.
+
+
+        Instead of a URL, you can provide the actual specification to be imported, either as a string (in the case of YAML) or an object (in the case of JSON). That request would look something like this:
+
+
+        `PUT https://api.stoplight.io/v1/versions/123/import`
+
+        ```json
+
+        {
+
+        "specData": {
+
+        "swagger": "2.0",
+
+        "info": {}
+
+        ... rest of spec
+
+        }
+
+        }
+
+        ```'
       operationId: PUT_versions-versionId-import
       requestBody:
         content:
@@ -261,8 +376,6 @@ paths:
       summary: Import
       tags:
       - Versions
-    servers:
-    - url: https://api.stoplight.io/v1
   /versions/{versionId}/publish:
     parameters:
     - description: This is the unique identifier for the version.
@@ -315,8 +428,6 @@ paths:
       summary: Publish
       tags:
       - Versions
-    servers:
-    - url: https://api.stoplight.io/v1
   /versions/{versionId}/unpublish:
     parameters:
     - description: This is the unique identifier for the version.
@@ -351,11 +462,7 @@ paths:
       summary: Unpublish
       tags:
       - Versions
-    servers:
-    - url: https://api.stoplight.io/v1
 components:
-  schemas:
-    standarderror: {}
   responses:
     trait_standardErrors_404:
       content:
@@ -369,11 +476,10 @@ components:
           schema:
             $ref: '#/components/schemas/standarderror'
       description: ''
+  schemas:
+    standarderror: {}
   securitySchemes:
     Authorization:
       in: header
       name: Authorization
       type: apiKey
-x-refined-from:
-- stoplight-openapi.json
-- stoplight-platform-v1-openapi.yml
