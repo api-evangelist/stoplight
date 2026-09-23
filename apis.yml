@@ -432,3 +432,6 @@ x-enrichment:
   status: enriched
   artifacts_added: 23
   pass: local-v1
+x-parent: smartbear
+x-relationship: acquisition
+x-acquired: 2023
