@@ -103,7 +103,7 @@ apis:
   tags:
   - API Testing
   - Mock Servers
-  - Open-Source
+  - Open Source
   - OpenAPI
   - Postman
   - Proxy
@@ -116,6 +116,7 @@ apis:
   - Postman
   - Proxy
   - Validation
+  - Open-Source
   properties:
   - type: Documentation
     url: https://docs.stoplight.io/docs/prism/674b27b261c3c-prism-overview
@@ -137,7 +138,7 @@ apis:
   - AsyncAPI
   - CI/CD
   - Linting
-  - Open-Source
+  - Open Source
   - OpenAPI
   - Style Guides
   tags_raw:
@@ -148,6 +149,7 @@ apis:
   - Open Source
   - OpenAPI
   - Style Guides
+  - Open-Source
   properties:
   - type: Documentation
     url: https://docs.stoplight.io/docs/spectral/674b27b261c3c-overview
@@ -179,7 +181,7 @@ apis:
   tags:
   - API Documentation
   - Components
-  - Open-Source
+  - Open Source
   - OpenAPI
   - React
   - Web Components
@@ -190,6 +192,7 @@ apis:
   - OpenAPI
   - React
   - Web Components
+  - Open-Source
   properties:
   - type: Documentation
     url: https://docs.stoplight.io/docs/elements/d6a8ba3f3c186-stoplight-elements
@@ -228,7 +231,7 @@ apis:
   - CI/CD
   - CLI
   - DevOps
-  - Open-Source
+  - Open Source
   - OpenAPI
   tags_raw:
   - CI/CD
@@ -236,6 +239,7 @@ apis:
   - DevOps
   - Open Source
   - OpenAPI
+  - Open-Source
   properties:
   - type: Documentation
     url: https://docs.stoplight.io/docs/platform/f76c84240244f-publish-with-the-stoplight-cli
@@ -267,7 +271,7 @@ common:
 - type: VendorFacets
   url: vendor-facets/stoplight-vendor-facets.yml
 - type: Website
-  url: https://www.smartbear.com/
+  url: https://stoplight.io/
 - type: IssueTracker
   url: https://github.com/stoplightio/prism/issues
 - type: Releases
