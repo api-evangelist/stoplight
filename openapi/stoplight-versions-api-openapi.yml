@@ -463,8 +463,6 @@ paths:
       tags:
       - Versions
 components:
-  schemas:
-    standarderror: {}
   responses:
     trait_standardErrors_404:
       content:
@@ -478,6 +476,8 @@ components:
           schema:
             $ref: '#/components/schemas/standarderror'
       description: ''
+  schemas:
+    standarderror: {}
   securitySchemes:
     Authorization:
       in: header
