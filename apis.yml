@@ -1,5 +1,7 @@
 aid: stoplight
+
 name: Stoplight
+
 description: Stoplight is a collaborative, design-first API platform providing a visual editor for OpenAPI
   specifications, interactive hosted documentation, automatic mock servers, API style guides and governance,
   and open-source tools including Prism (mock server), Spectral (JSON/YAML linter), and Elements (documentation
@@ -8,7 +10,9 @@ description: Stoplight is a collaborative, design-first API platform providing a
   API Hub experience. The platform supports OpenAPI v3.1, v3.0, v2.0, Arazzo v1.0, and AsyncAPI v2.x,
   with integrations for GitHub, GitLab, Bitbucket, and Azure DevOps. The Stoplight status page now redirects
   to stoplight.status.smartbear.com, confirming the operational consolidation under SmartBear.
+
 type: Index
+
 deliveryModel:
   model: open-core
   license: Apache-2.0
@@ -22,6 +26,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: freemium
   onboarding: unknown
@@ -34,9 +39,13 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
+
 position: Consuming
+
 access: 3rd-Party
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/stoplight.png
+
 tags:
 - API Design
 - API Documentation
@@ -49,10 +58,160 @@ tags:
 - OpenAPI
 - SmartBear API Hub
 - Style Guides
+
 created: '2026-03-03'
+
 modified: '2026-09-16'
+
 url: https://raw.githubusercontent.com/api-evangelist/stoplight/refs/heads/main/apis.yml
+
 specificationVersion: '0.23'
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
+common:
+- type: AgenticAccess
+  url: agentic-access/stoplight-agentic-access.yml
+- type: Spectral
+  url: rules/stoplight-rules.yml
+- type: Spectral
+  url: rules/stoplight-jsonschema-spectral-rules.yml
+- type: Deprecation
+  url: lifecycle/stoplight-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/stoplight-error-codes.yml
+- type: Hosts
+  url: hosts/stoplight-hosts.yml
+- type: Vendors
+  url: vendors/stoplight-vendors.yml
+- type: VendorFacets
+  url: vendor-facets/stoplight-vendor-facets.yml
+- type: Website
+  url: https://stoplight.io/
+- type: IssueTracker
+  url: https://github.com/stoplightio/prism/issues
+- type: Releases
+  url: https://github.com/stoplightio/prism/releases
+- type: CodeOfConduct
+  url: https://github.com/stoplightio/prism/blob/main/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/stoplightio/prism/blob/main/CONTRIBUTING.md
+- type: License
+  name: Apache-2.0
+  url: https://github.com/stoplightio/prism/blob/main/LICENSE
+- type: DomainSecurity
+  url: security/stoplight-domain-security.yml
+- type: Portal
+  url: https://stoplight.io
+- type: Documentation
+  url: https://docs.stoplight.io/
+- type: Pricing
+  url: https://stoplight.io/pricing
+- type: Blog
+  url: https://blog.stoplight.io/
+- type: About
+  url: https://stoplight.io/about
+- type: Support
+  url: https://support.stoplight.io/
+- type: Contact
+  url: https://stoplight.io/contact
+- type: StatusPage
+  url: https://stoplight.status.smartbear.com/
+- type: PrivacyPolicy
+  url: https://stoplight.io/privacy
+- type: TermsOfService
+  url: https://stoplight.io/terms
+- type: Security
+  url: https://stoplight.io/security-practices
+- type: SignUp
+  url: https://stoplight.io/welcome
+- type: Login
+  url: https://stoplight.io/login
+- type: GitHubOrganization
+  url: https://github.com/stoplightio
+- type: OpenSource
+  url: https://stoplight.io/open-source
+- type: GettingStarted
+  url: https://stoplight.io/api-development-guide
+- type: Solutions
+  url: https://stoplight.io/solutions
+- type: CaseStudies
+  url: https://stoplight.io/case-studies
+- type: Webinars
+  url: https://stoplight.io/webinars
+- type: Guides
+  url: https://stoplight.io/guides
+- type: Press
+  url: https://stoplight.io/press
+- type: YouTube
+  url: https://www.youtube.com/stoplight
+- type: APIGovernance
+  url: https://stoplight.io/api-governance
+- type: APIDocumentation
+  url: https://stoplight.io/api-documentation
+- type: Integrations
+  url: https://stoplight.io/integrations
+- type: ParentCompany
+  url: https://smartbear.com/
+- type: OpenAPI
+  url: openapi/_original/stoplight-platform-v1-openapi.yml
+- type: Overlay
+  url: overlays/stoplight-platform-v1-overlay.yaml
+- type: Authentication
+  url: authentication/stoplight-authentication.yml
+- type: ErrorCatalog
+  url: errors/stoplight-problem-types.yml
+- type: ErrorCodes
+  url: errors/stoplight-error-codes.yml
+- type: Conventions
+  url: conventions/stoplight-conventions.yml
+- type: DataModel
+  url: data-model/stoplight-data-model.yml
+- type: Packages
+  url: packages/stoplight-packages.yml
+- type: SDKs
+  url: packages/stoplight-packages.yml
+- type: CLI
+  url: cli/stoplight-cli.yml
+- type: Components
+  url: components/stoplight-components.yml
+- type: Sandbox
+  url: sandbox/stoplight-sandbox.yml
+- type: Lifecycle
+  url: lifecycle/stoplight-lifecycle.yml
+- type: ChangeLog
+  url: changelog/stoplight-changelog.yml
+- type: Conformance
+  url: conformance/stoplight-conformance.yml
+- type: Compliance
+  url: https://smartbear.com/security/
+- type: TrustCenter
+  url: security/stoplight-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/stoplight-vulnerability-disclosure.yml
+- type: Plans
+  url: plans/stoplight-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/stoplight-rate-limits.yml
+- type: FinOps
+  url: finops/stoplight-finops.yml
+- type: Vocabulary
+  url: vocabulary/stoplight-vocabulary.yml
+- type: Rules
+  url: rules/stoplight-jsonschema-spectral-rules.yml
+- type: JSONSchema
+  url: json-schema/stoplight-spectral-ruleset-schema.json
+- type: JSONStructure
+  url: json-structure/stoplight-spectral-ruleset-structure.json
+- type: JSONLD
+  url: json-ld/stoplight-context.jsonld
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Community
+  url: https://community.smartbear.com/category/stoplight/discussions/stoplight
+
 apis:
 - aid: stoplight:stoplight-platform
   name: Stoplight Platform
@@ -267,134 +426,7 @@ apis:
     url: conventions/stoplight-conventions.yml
   - type: Documentation
     url: https://docs.stoplight.io/docs/platform/vrjs3xapm31b7-stoplight-documentation
-common:
-- type: VendorFacets
-  url: vendor-facets/stoplight-vendor-facets.yml
-- type: Website
-  url: https://stoplight.io/
-- type: IssueTracker
-  url: https://github.com/stoplightio/prism/issues
-- type: Releases
-  url: https://github.com/stoplightio/prism/releases
-- type: CodeOfConduct
-  url: https://github.com/stoplightio/prism/blob/main/CODE_OF_CONDUCT.md
-- type: ContributionGuide
-  url: https://github.com/stoplightio/prism/blob/main/CONTRIBUTING.md
-- type: License
-  name: Apache-2.0
-  url: https://github.com/stoplightio/prism/blob/main/LICENSE
-- type: DomainSecurity
-  url: security/stoplight-domain-security.yml
-- type: Portal
-  url: https://stoplight.io
-- type: Documentation
-  url: https://docs.stoplight.io/
-- type: Pricing
-  url: https://stoplight.io/pricing
-- type: Blog
-  url: https://blog.stoplight.io/
-- type: About
-  url: https://stoplight.io/about
-- type: Support
-  url: https://support.stoplight.io/
-- type: Contact
-  url: https://stoplight.io/contact
-- type: StatusPage
-  url: https://stoplight.status.smartbear.com/
-- type: PrivacyPolicy
-  url: https://stoplight.io/privacy
-- type: TermsOfService
-  url: https://stoplight.io/terms
-- type: Security
-  url: https://stoplight.io/security-practices
-- type: SignUp
-  url: https://stoplight.io/welcome
-- type: Login
-  url: https://stoplight.io/login
-- type: GitHubOrganization
-  url: https://github.com/stoplightio
-- type: OpenSource
-  url: https://stoplight.io/open-source
-- type: GettingStarted
-  url: https://stoplight.io/api-development-guide
-- type: Solutions
-  url: https://stoplight.io/solutions
-- type: CaseStudies
-  url: https://stoplight.io/case-studies
-- type: Webinars
-  url: https://stoplight.io/webinars
-- type: Guides
-  url: https://stoplight.io/guides
-- type: Press
-  url: https://stoplight.io/press
-- type: YouTube
-  url: https://www.youtube.com/stoplight
-- type: APIGovernance
-  url: https://stoplight.io/api-governance
-- type: APIDocumentation
-  url: https://stoplight.io/api-documentation
-- type: Integrations
-  url: https://stoplight.io/integrations
-- type: ParentCompany
-  url: https://smartbear.com/
-- type: OpenAPI
-  url: openapi/_original/stoplight-platform-v1-openapi.yml
-- type: Overlay
-  url: overlays/stoplight-platform-v1-overlay.yaml
-- type: Authentication
-  url: authentication/stoplight-authentication.yml
-- type: ErrorCatalog
-  url: errors/stoplight-problem-types.yml
-- type: ErrorCodes
-  url: errors/stoplight-error-codes.yml
-- type: Conventions
-  url: conventions/stoplight-conventions.yml
-- type: DataModel
-  url: data-model/stoplight-data-model.yml
-- type: Packages
-  url: packages/stoplight-packages.yml
-- type: SDKs
-  url: packages/stoplight-packages.yml
-- type: CLI
-  url: cli/stoplight-cli.yml
-- type: Components
-  url: components/stoplight-components.yml
-- type: Sandbox
-  url: sandbox/stoplight-sandbox.yml
-- type: Lifecycle
-  url: lifecycle/stoplight-lifecycle.yml
-- type: ChangeLog
-  url: changelog/stoplight-changelog.yml
-- type: Conformance
-  url: conformance/stoplight-conformance.yml
-- type: Compliance
-  url: https://smartbear.com/security/
-- type: TrustCenter
-  url: security/stoplight-trust-center.yml
-- type: VulnerabilityDisclosure
-  url: security/stoplight-vulnerability-disclosure.yml
-- type: Plans
-  url: plans/stoplight-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/stoplight-rate-limits.yml
-- type: FinOps
-  url: finops/stoplight-finops.yml
-- type: Vocabulary
-  url: vocabulary/stoplight-vocabulary.yml
-- type: Rules
-  url: rules/stoplight-jsonschema-spectral-rules.yml
-- type: JSONSchema
-  url: json-schema/stoplight-spectral-ruleset-schema.json
-- type: JSONStructure
-  url: json-structure/stoplight-spectral-ruleset-structure.json
-- type: JSONLD
-  url: json-ld/stoplight-context.jsonld
-- type: LLMsTxt
-  url: llms/stoplight-llms.txt
-- type: AgentSkill
-  url: skills/_index.yml
-- type: Community
-  url: https://community.smartbear.com/category/stoplight/discussions/stoplight
+
 integrations:
 - name: GitHub
 - name: GitLab
@@ -403,6 +435,7 @@ integrations:
 - name: SAML SSO
 - name: LDAP
 - name: Google Analytics
+
 plans:
 - name: Free
   price: $0
@@ -430,17 +463,19 @@ plans:
   price: custom
   users: unlimited
   projects: unlimited
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
 x-enrichment:
   date: '2026-08-27'
   status: enriched
   artifacts_added: 23
   pass: local-v1
+
 x-parent: smartbear
+
 x-relationship: acquisition
+
 x-acquired: 2023
+
 x-correction-request:
   requested: '2026-10-03'
   source:

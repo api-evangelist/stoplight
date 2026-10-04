@@ -463,21 +463,21 @@ paths:
       tags:
       - Versions
 components:
+  schemas:
+    standarderror: {}
   responses:
-    trait_standardErrors_404:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/standarderror'
-      description: ''
     trait_standardErrors_401:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/standarderror'
       description: ''
-  schemas:
-    standarderror: {}
+    trait_standardErrors_404:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/standarderror'
+      description: ''
   securitySchemes:
     Authorization:
       in: header
