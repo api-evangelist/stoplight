@@ -396,6 +396,12 @@ common:
   url: skills/_index.yml
 - type: Community
   url: https://community.smartbear.com/category/stoplight/discussions/stoplight
+- type: SpectralRules
+  url: https://github.com/stoplightio/StudioLab/blob/9e28418090c9310fc445f174d948d76c86985739/.spectral.yaml
+- type: SpectralRules
+  url: https://github.com/stoplightio/spectral-action/blob/6416fd018ae38e60136775066eb3e98172143141/.spectral.json
+- type: SpectralRules
+  url: https://github.com/stoplightio/style-guides-rulebook-series/blob/454313097a63c60c1d5667923546e5d73d7b4568/.spectral.json
 integrations:
 - name: GitHub
 - name: GitLab

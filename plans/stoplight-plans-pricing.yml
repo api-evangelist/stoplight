@@ -134,3 +134,42 @@ billing:
     - billing admin
     - admin
   interval_switching: Monthly and yearly subscriptions can be switched in the Billing Dashboard.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - hybrid
+  - negotiated
+  units: []
+  plans:
+  - name: Free
+    access: free
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Basic
+    access: paid
+    model: hybrid
+    model_how: derived
+    units: []
+    periods: []
+  - name: Startup
+    access: paid
+    model: hybrid
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro Team
+    access: paid
+    model: hybrid
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: negotiated
+    model: negotiated
+    model_how: stated
+    units: []
+    periods: []
