@@ -7,13 +7,16 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: www.smartbear.com
   final_host: smartbear.com
-  ownership: inherited
+  ownership: unresolved
   owner: null
   shares_host_with:
   - readyapi
-  inherited_from: smartbear.com
+  inherited_from: null
+  alias_of: smartbear.com
   verdict: scored
   score: null
+  band: null
+  band_label: null
   host_score: 27
   density: null
   words: 636

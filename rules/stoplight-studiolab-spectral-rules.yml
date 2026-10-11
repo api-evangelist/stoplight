@@ -1,0 +1,19 @@
+# harvested from https://github.com/stoplightio/StudioLab/blob/9e28418090c9310fc445f174d948d76c86985739/.spectral.yaml on 2026-10-09 — a Spectral ruleset published in the provider's own GitHub repository (stoplightio/StudioLab); found by GitHub code search, fetched verbatim
+x-method: harvested
+x-stamped: 2026-10-09
+x-source-url: https://github.com/stoplightio/StudioLab/blob/9e28418090c9310fc445f174d948d76c86985739/.spectral.yaml
+formats: []
+extends:
+  - 'spectral:oas'
+rules:
+  info-matches-stoplight:
+    description: This is an example rule
+    message: Info must contain Stoplight
+    given: $.info
+    recommended: true
+    type: style
+    then:
+      field: title
+      function: pattern
+      functionOptions:
+        match: Stoplight
