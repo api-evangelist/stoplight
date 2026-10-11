@@ -75,6 +75,10 @@ maintainers:
   email: kin@apievangelist.com
 
 common:
+- type: LLMsTxt
+  url: llms/stoplight-llms.txt
+- type: SpectralRules
+  url: https://github.com/stoplightio/style-guides-rulebook-series/blob/454313097a63c60c1d5667923546e5d73d7b4568/.spectral.json
 - type: AgenticAccess
   url: agentic-access/stoplight-agentic-access.yml
 - type: Spectral

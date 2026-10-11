@@ -6,6 +6,7 @@ specification: FinOps Framework
 specificationVersion: '1.0'
 provider: Stoplight
 providerId: stoplight
+name: Stoplight API FinOps
 publisherName: Stoplight
 serviceCategory: API
 created: '2026-05-04'
