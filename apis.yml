@@ -46,6 +46,9 @@ access: 3rd-Party
 
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/stoplight.png
 
+x-docs-platform: stoplight
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-04
 tags:
 - API Design
 - API Documentation

@@ -2,7 +2,7 @@ overlay: 1.0.0
 info:
   title: API Evangelist enhancements for the Stoplight v1 Platform API
   version: 1.0.0
-extends: openapi/stoplight-platform-v1-openapi.yml
+extends: ../openapi/_original/stoplight-platform-v1-openapi.yml
 x-generated: '2026-08-27'
 x-method: generated
 x-source: >-
