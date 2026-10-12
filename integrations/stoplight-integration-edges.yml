@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/stoplight/integrations
+- https://n8n.io/integrations/stoplight/
+- https://composio.dev/toolkits/stoplight
+- https://monid.ai/tools/stoplight
+checked:
+- https://composio.dev/toolkits/stoplight
+- https://monid.ai/tools/stoplight
+- https://n8n.io/integrations/stoplight/
+- https://zapier.com/apps/stoplight/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
