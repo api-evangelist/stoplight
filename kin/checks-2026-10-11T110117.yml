@@ -2,16 +2,16 @@
 kin_checks:
   slug: stoplight
   schema_version: 0.23.0
-  scored_at: '2026-10-03'
-  run_ts: 2026-10-03T024842
+  scored_at: '2026-10-11'
+  run_ts: 2026-10-11T110117
   note: Actionable checks (missed + partial) in `checks`, plus the ids that did not
     apply in `na`. Everything else in rubric/scoring-0.23.0.yml was earned; counts
     below let you verify that.
   counts:
     total: 153
-    earned: 47
-    partial: 25
-    missed: 57
+    earned: 48
+    partial: 27
+    missed: 54
     na: 24
   checks:
   - id: leadership_present
@@ -56,15 +56,11 @@ kin_checks:
     status: missed
   - id: domain_standard_conformance
     status: missed
-  - id: rules_substantial
-    status: missed
   - id: overlay_published
     status: missed
   - id: rate_limits_documented
     status: missed
   - id: rate_limits_rich
-    status: missed
-  - id: deprecation_policy
     status: missed
   - id: webhooks_advertised
     status: missed
@@ -111,8 +107,6 @@ kin_checks:
   - id: upsert_alternate_key
     status: missed
   - id: upsert_named
-    status: missed
-  - id: agentic_access
     status: missed
   - id: reversibility_documented
     status: missed
@@ -219,6 +213,9 @@ kin_checks:
   - id: rules_present
     status: partial
     earned: 2.5
+  - id: rules_substantial
+    status: partial
+    earned: 1.25
   - id: balanced_severities
     status: partial
     earned: 0.75
@@ -232,6 +229,10 @@ kin_checks:
   - id: agent_skill_present
     status: partial
     earned: 0.75
+  - id: agentic_access
+    status: partial
+    earned: 9.0
+    detail: 'authorship: unknown'
   - id: auth_clarity
     status: partial
     earned: 3.5
