@@ -1,4 +1,4 @@
-# Stoplight (stoplight)
+# Stoplight
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,222 +64,177 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Stoplight is a collaborative, design-first API platform providing a visual editor for OpenAPI specifications, interactive hosted documentation, automatic mock servers, API style guides and governance, and open-source tools including Prism (mock server), Spectral (JSON/YAML linter), and Elements (documentation components). Acquired by SmartBear in 2023, Stoplight is now positioned within SmartBear's API Hub solution group alongside SwaggerHub, with Spectral, Prism, and Elements progressively integrated into the unified API Hub experience. The platform supports OpenAPI v3.1, v3.0, v2.0, Arazzo v1.0, and AsyncAPI v2.x. The status page now redirects to stoplight.status.smartbear.com, confirming operational consolidation under SmartBear.
+Stoplight is a collaborative, design-first API platform providing a visual editor for OpenAPI specifications, interactive hosted documentation, automatic mock servers, API style guides and governance, and open-source tools including Prism (mock server), Spectral (JSON/YAML linter), and Elements (documentation components). Acquired by SmartBear in 2023, Stoplight is now positioned within SmartBear's API Hub solution group alongside SwaggerHub, with Spectral, Prism, and Elements progressively integrated into the unified API Hub experience. The platform supports OpenAPI v3.1, v3.0, v2.0, Arazzo v1.0, and AsyncAPI v2.x, with integrations for GitHub, GitLab, Bitbucket, and Azure DevOps. The Stoplight status page now redirects to stoplight.status.smartbear.com, confirming the operational consolidation under SmartBear.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/stoplight/refs/heads/main/apis.yml)
+**Areas:** API Design · API Documentation · API Governance · AsyncAPI · Design-First · Developer Tools · Linting · Mock Servers · OpenAPI · SmartBear API Hub · Style Guides · Documentation
 
-## Scope
+## Stoplight on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Stoplight is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/stoplight/](https://apis.io/providers/stoplight/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- API Design
-- API Documentation
-- API Governance
-- AsyncAPI
-- Design-First
-- Linting
-- Mock Servers
-- OpenAPI
-- SmartBear API Hub
-- Style Guides
+- [Stoplight Platform](https://apis.io/apis/stoplight/stoplight-platform/) — Stoplight Platform is a SaaS collaborative API design and documentation management tool providing a visual editor for OpenAPI specifications, interactive…
+- [Stoplight Prism](https://apis.io/apis/stoplight/prism/) — Prism is an open-source HTTP mock and proxy server that turns any OpenAPI v2/v3 or Postman Collection file into a realistic API server with mocking,…
+- [Stoplight Spectral](https://apis.io/apis/stoplight/spectral/) — Spectral is an open-source JSON and YAML linter for creating automated API style guides and governance rulesets. Provides built-in support for OpenAPI v3.1,…
+- [Stoplight Elements](https://apis.io/apis/stoplight/elements/) — Elements is an open-source toolkit for building beautiful, interactive API documentation from OpenAPI specifications using embeddable React or Web…
+- [Stoplight Studio](https://apis.io/apis/stoplight/studio/) — Stoplight Studio is the visual API design and technical writing editor included in the Stoplight Platform. Provides a form-based editor for creating and…
+- [Stoplight CLI](https://apis.io/apis/stoplight/cli/) — The Stoplight CLI enables programmatic linting of API descriptions and pushing analysis results to the Stoplight Platform from CI/CD pipelines. Supports…
+- [Stoplight Versions API](https://apis.io/apis/stoplight/stoplight-versions-api/) — The Versions API from Stoplight — 5 operation(s) for versions.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-03
-- **Modified:** 2026-05-22
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Stoplight Platform
-Collaborative API design and documentation management SaaS platform with visual OpenAPI editor, hosted documentation, mock servers, governance, and Git integration. Now part of SmartBear's API Hub solution group.
+Model Context Protocol servers that expose the API to agents.
 
-**Human URL:** [https://stoplight.io](https://stoplight.io)
+- [stoplight-mcp.yml](https://apis.io/servers/stoplight/stoplight-mcp-yml/)
 
-#### Tags
+#### Agentic access (1)
 
-- API Design, API Documentation, API Governance, Design-First, Mock Servers, OpenAPI, SmartBear API Hub, Style Guides
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Properties
+- [Stoplight Agentic Access](https://apis.io/agentic-access/stoplight/stoplight-agentic-access/)
 
-- [Documentation](https://docs.stoplight.io/docs/platform/vrjs3xapm31b7-stoplight-documentation)
-- [Pricing](https://stoplight.io/pricing)
-- [Sign Up](https://stoplight.io/welcome)
-- [Status Page](https://stoplight.status.smartbear.com/)
+#### JSON Schema (1)
 
-### Stoplight Prism
-Open-source HTTP mock and proxy server that turns OpenAPI v2/v3 and Postman Collection files into realistic API servers with mocking, transformations, and validations. ~4,943 GitHub stars.
+The data models the API reads and writes.
 
-**Human URL:** [https://stoplight.io/open-source/prism](https://stoplight.io/open-source/prism)
+- [Spectral Ruleset](https://apis.io/schemas/stoplight/stoplight-spectral-ruleset/)
 
-#### Tags
+#### JSON Structure (1)
 
-- API Testing, Mock Servers, Open Source, OpenAPI, Postman, Proxy, Validation
+Data models expressed in JSON Structure.
 
-#### Properties
+- [Stoplight Spectral Ruleset Structure](https://apis.io/json-structure/stoplight/stoplight-spectral-ruleset-structure/)
 
-- [Documentation](https://docs.stoplight.io/docs/prism)
-- [GitHub Repository](https://github.com/stoplightio/prism)
-- [NPM](https://www.npmjs.com/package/@stoplight/prism-cli)
+#### JSON-LD (1)
 
-### Stoplight Spectral
-Open-source JSON/YAML linter for creating automated API style guides with built-in support for OpenAPI v3.1, v3.0, v2.0, Arazzo v1.0, and AsyncAPI v2.x. Integrates into CI/CD pipelines. SmartBear has integrated Spectral into SwaggerHub for API governance. ~3,115 GitHub stars.
+Linked-data contexts for the provider's vocabulary.
 
-**Human URL:** [https://stoplight.io/open-source/spectral](https://stoplight.io/open-source/spectral)
+- [Stoplight Context](https://apis.io/jsonld/stoplight/stoplight-context/)
 
-#### Tags
+#### Vocabulary (1)
 
-- API Governance, AsyncAPI, CI/CD, Linting, Open Source, OpenAPI, Style Guides
+The provider's domain terms, defined.
 
-#### Properties
+- [Stoplight Vocabulary](https://apis.io/vocabularies/stoplight/stoplight-vocabulary/)
 
-- [Documentation](https://docs.stoplight.io/docs/spectral)
-- [GitHub Repository](https://github.com/stoplightio/spectral)
-- [NPM](https://www.npmjs.com/package/@stoplight/spectral-cli)
-- [Docker](https://hub.docker.com/r/stoplight/spectral)
-- [GitHub Action](https://github.com/stoplightio/spectral-action)
-- [VS Code Extension](https://github.com/stoplightio/vscode-spectral)
-- [Spectral Rulesets](https://github.com/stoplightio/spectral-rulesets)
-- [OWASP Ruleset](https://github.com/stoplightio/spectral-owasp-ruleset)
-- [Documentation Ruleset](https://github.com/stoplightio/spectral-documentation)
+#### Overlays (2)
 
-### Stoplight Elements
-Open-source toolkit for building interactive API documentation from OpenAPI specs using embeddable React or Web Components. ~2,425 GitHub stars.
+OpenAPI overlays, including conversational phrasing for each operation.
 
-**Human URL:** [https://stoplight.io/open-source/elements](https://stoplight.io/open-source/elements)
+- [Stoplight Platform V1 Overlay](https://apis.io/overlays/stoplight/stoplight-platform-v1-overlay/)
+- [Stoplight Versions Api Phrasing Overlay](https://apis.io/overlays/stoplight/stoplight-versions-api-phrasing-overlay/)
 
-#### Tags
+#### Governance rules (5)
 
-- API Documentation, Components, Open Source, OpenAPI, React, Web Components
+Spectral rulesets for the provider's contracts.
 
-#### Properties
+- [Stoplight — jsonschema rules](https://apis.io/rules/stoplight/stoplight-jsonschema-spectral-rules/)
+- [Stoplight API Rules](https://apis.io/rules/stoplight/stoplight-rules/)
+- [Stoplight — spectral action rules](https://apis.io/rules/stoplight/stoplight-spectral-action-spectral-rules/)
+- [Stoplight — studiolab rules](https://apis.io/rules/stoplight/stoplight-studiolab-spectral-rules/)
+- [Stoplight — style guides rulebook series rules](https://apis.io/rules/stoplight/stoplight-style-guides-rulebook-series-spectral-rules/)
 
-- [Documentation](https://docs.stoplight.io/docs/elements)
-- [GitHub Repository](https://github.com/stoplightio/elements)
-- [NPM](https://www.npmjs.com/package/@stoplight/elements)
-- [Demo](https://elements-demo.stoplight.io/)
+#### Security (4)
 
-### Stoplight Studio
-Visual API design editor for OpenAPI v2/v3 with validation, mocking, and modeling support. Available as web app and desktop application. ~867 GitHub stars.
+Authentication, trust centre, and vulnerability disclosure.
 
-**Human URL:** [https://stoplight.io/api-design](https://stoplight.io/api-design)
+- [Stoplight Authentication](https://apis.io/security/stoplight/stoplight-authentication/)
+- [Stoplight Domain Security](https://apis.io/security/stoplight/stoplight-domain-security/)
+- [Stoplight Trust Center](https://apis.io/security/stoplight/stoplight-trust-center/)
+- [Stoplight Vulnerability Disclosure](https://apis.io/security/stoplight/stoplight-vulnerability-disclosure/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- API Design, Editor, OpenAPI, Technical Writing
+Published plans, tiers and prices.
 
-#### Properties
+- [Stoplight Plans Pricing](https://apis.io/plans/stoplight/stoplight-plans-pricing/)
 
-- [Documentation](https://docs.stoplight.io/docs/studio)
-- [GitHub Repository](https://github.com/stoplightio/studio)
+#### Rate limits (1)
 
-### Stoplight CLI
-Command-line tool for CI/CD integration of API governance checks and Spectral linting.
+Published request limits.
 
-**Human URL:** [https://docs.stoplight.io/docs/platform/1e78f9c9bfc1e-stoplight-cli](https://docs.stoplight.io/docs/platform/1e78f9c9bfc1e-stoplight-cli)
+- [Stoplight Rate Limits](https://apis.io/rate-limits/stoplight/stoplight-rate-limits/)
 
-#### Tags
+#### FinOps (1)
 
-- CI/CD, CLI, DevOps, Open Source, OpenAPI
+What the API costs to run, by operation.
 
-#### Properties
+- [Stoplight Finops](https://apis.io/finops/stoplight/stoplight-finops/)
 
-- [Documentation](https://docs.stoplight.io/docs/platform/1e78f9c9bfc1e-stoplight-cli)
-- [NPM](https://www.npmjs.com/package/@stoplight/cli)
-- [Stoplight CLI Workflow](https://github.com/stoplightio/stoplight-cli-workflow)
+## Where to find this API
 
-## Plans & Pricing
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-| Plan | Annual | Monthly | Users | Projects |
-|---|---|---|---|---|
-| Free | $0 | $0 | 1 | 1 |
-| Basic | $44/mo | $56/mo | 3 (+$11-14/user) | Unlimited |
-| Startup | $113/mo | $147/mo | 8 (+$11-14/user) | Unlimited |
-| Pro Team | $362/mo | $453/mo | 15 (+$22-27/user) | Unlimited (20 teams) |
-| Enterprise | Custom | Custom | Unlimited | Unlimited |
-
-## Artifacts
-
-### JSON Schemas
-
-| File | Description |
-|---|---|
-| [stoplight-spectral-ruleset-schema.json](json-schema/stoplight-spectral-ruleset-schema.json) | JSON Schema for Spectral ruleset files |
-
-### JSON Structure
-
-| File | Description |
-|---|---|
-| [stoplight-spectral-ruleset-structure.json](json-structure/stoplight-spectral-ruleset-structure.json) | Spectral ruleset file structure documentation |
-
-### JSON-LD
-
-| File | Description |
-|---|---|
-| [stoplight-context.jsonld](json-ld/stoplight-context.jsonld) | JSON-LD context for Stoplight tooling vocabulary |
-
-### Vocabulary
-
-| File | Description |
-|---|---|
-| [stoplight-vocabulary.yml](vocabulary/stoplight-vocabulary.yml) | Domain vocabulary for API design, governance, and tooling |
-
-### Plans
-
-| File | Description |
-|---|---|
-| [stoplight-plans-pricing.yml](plans/stoplight-plans-pricing.yml) | API Commons Plans 0.1 pricing structure |
-
-### Rate Limits
-
-| File | Description |
-|---|---|
-| [stoplight-rate-limits.yml](rate-limits/stoplight-rate-limits.yml) | API Commons Rate Limits 0.1 quotas and throttling |
-
-### FinOps
-
-| File | Description |
-|---|---|
-| [stoplight-finops.yml](finops/stoplight-finops.yml) | FinOps Framework / FOCUS-aligned cost allocation |
-
-## Common Properties
-
-- [Portal](https://stoplight.io)
+- [Website](https://stoplight.io/)
 - [Documentation](https://docs.stoplight.io/)
+- [Getting started](https://stoplight.io/api-development-guide)
 - [Pricing](https://stoplight.io/pricing)
-- [Blog](https://blog.stoplight.io/)
-- [About](https://stoplight.io/about)
+- [Sign up](https://stoplight.io/welcome)
 - [Support](https://support.stoplight.io/)
-- [Contact](https://stoplight.io/contact)
-- [Status](https://stoplight.status.smartbear.com/)
-- [Privacy Policy](https://stoplight.io/privacy)
-- [Terms of Service](https://stoplight.io/terms)
+- [Blog](https://blog.stoplight.io/)
 - [Security](https://stoplight.io/security-practices)
-- [Sign Up](https://stoplight.io/welcome)
-- [Login](https://stoplight.io/login)
-- [GitHub Org](https://github.com/stoplightio)
-- [Open Source](https://stoplight.io/open-source)
-- [Getting Started](https://stoplight.io/api-development-guide)
-- [Solutions](https://stoplight.io/solutions)
-- [Case Studies](https://stoplight.io/case-studies)
-- [Webinars](https://stoplight.io/webinars)
-- [Guides](https://stoplight.io/guides)
-- [Press](https://stoplight.io/press)
-- [YouTube](https://www.youtube.com/stoplight)
-- [API Governance](https://stoplight.io/api-governance)
-- [API Documentation](https://stoplight.io/api-documentation)
-- [Parent Company (SmartBear)](https://smartbear.com/product/stoplight/)
-- [SmartBear API Hub](https://smartbear.com/api-hub/)
+- [Compliance](https://smartbear.com/security/)
+- [Terms of service](https://stoplight.io/terms)
+- [Privacy policy](https://stoplight.io/privacy)
+- [GitHub](https://github.com/stoplightio)
+- [Status](https://stoplight.status.smartbear.com/)
 
-## Notes on SmartBear Integration
+## API Evangelist rating
 
-Stoplight was acquired by SmartBear in 2023 and is being progressively integrated into SmartBear's API Hub solution group alongside SwaggerHub. SmartBear has realigned 20+ products into three solution hubs: API Hub, Test Hub, and Insight Hub. Spectral, Prism, and Elements are being integrated into SwaggerHub. The stoplight.io domain, blog, pricing page, open-source tools, and documentation remain active and independently branded as of May 2026, though the status page now redirects to stoplight.status.smartbear.com. No formal "Stoplight Spaces" product has been confirmed on the public Stoplight site; SmartBear references this concept in the broader API Hub realignment context.
+**Kin Score 74.8** — exemplar · rubric 0.25.0 · scored 2026-10-23
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 65.2 |
+| Contract quality | 55.6 |
+| Contract governance | 86.4 |
+| Operational transparency | 52.6 |
+| Developer ergonomics | 80.4 |
+| Access clarity | 92.1 |
 
-**FN:** Kin Lane
+**Agent readiness 32.9** — agent-ready
 
-**Email:** kin@apievangelist.com
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/stoplight/](https://apis.io/providers/stoplight/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Stoplight: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/stoplight/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
